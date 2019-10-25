@@ -3,15 +3,14 @@ layout: post
 title: Cách đọc một cuốn sách khó
 ---
 
-# Welcome
-Thưa tiến sĩ Adler,
-
-Nói thật với ông, tôi nhận thấy những cuốn sách gọi là vĩ đại rất khó đọc. Tôi sẵn lòng tin lời ông rằng chúng vĩ đại. Nhưng làm sao tôi có thể đánh giá cao sự vĩ đại của chúng nếu như đối với tôi chúng quá khó đọc? Ông có thể cho tôi vài gợi ý hữu ích về cách đọc một cuốn sách khó không?
-
-I.C.
-
+### Hỏi 
+>Thưa tiến sĩ Adler,
+>
+>Nói thật với ông, tôi nhận thấy những cuốn sách gọi là vĩ đại rất khó đọc. Tôi sẵn lòng tin lời ông rằng chúng vĩ đại. Nhưng làm >sao tôi có thể đánh giá cao sự vĩ đại của chúng nếu như đối với tôi chúng quá khó đọc? Ông có thể cho tôi vài gợi ý hữu ích về cách đọc một cuốn sách khó không?
+>I.C.
 
 
+### Trả lời
 I.C. thân mến,
 
 Nguyên tắc đọc quan trọng nhất là nguyên tắc mà tôi cứ nói đi nói lại với nhóm nghiên cứu về những tác phẩm lớn của tôi: Trong khi đọc một cuốn sách khó lần đầu tiên, cứ đọc nó một mạch không dừng lại. Hãy chú ý đến những gì anh có thể hiểu, và đừng dừng lại vì những gì anh chưa nắm bắt được ngay lập tức. Cứ làm như vậy. Đọc một mạch cuốn sách không nản lòng vì những đoạn, những chú thích, những luận điểm, những tham khảo mà anh không nắm bắt được. Nếu anh dừng lại ở bất kỳ những chướng ngại này, nếu anh cứ trì hoãn, anh sẽ thất bại. Trong hầu hết các trường hợp, anh sẽ không thể giải đáp được sự việc bằng việc bám lấy nó. Anh có cơ hội hiểu nó nhiều hơn qua lần đọc thứ hai, nhưng điều đó đòi hỏi anh phải đọc cuốn sách một mạch trong lần đầu.
@@ -28,4 +27,7 @@ Thực tiễn này giúp anh giữ được sự nhạy bén trong khi lao vào 
 
 Người đọc tốt luôn tích cực trong mọi nỗ lực để hiểu. Bất kỳ cuốn sách nào cũng là một vấn đề, một điều bí ẩn. Thái độ của người đọc phải là thái độ của một thám tử tìm kiếm những manh mối đi vào những ý tưởng cơ bản và nhạy bén với tất cả những gì làm cho chúng rõ ràng hơn. Nguyên tắc về việc đọc nhanh lần đầu giúp duy trì thái độ này. Nếu bạn theo cách đó, bạn sẽ ngạc nhiên khi thấy mình tiết kiệm được bao nhiêu là thời gian, bạn sẽ hiểu thấu đáo hơn biết bao nhiêu, và nó sẽ dễ dàng hơn biết bao nhiêu.
 
-Nguồn: Những tư tưởng lớn từ những tác phẩm vĩ đại
+Nguồn: 
+>https://www.chungta.com/nd/tu-lieu-tra-cuu/cach_doc_mot_cuon_sach_kho.html
+>
+>Những tư tưởng lớn từ những tác phẩm vĩ đại
