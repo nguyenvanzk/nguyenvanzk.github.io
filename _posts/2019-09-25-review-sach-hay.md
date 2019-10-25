@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Cuốn sách không thể đọc hết một lần
+tags: ["book review"]
 ---
 > Review: Cuốn sách Secret của Byrne
 

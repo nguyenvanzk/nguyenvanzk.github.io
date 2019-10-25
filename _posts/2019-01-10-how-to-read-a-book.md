@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Cách đọc một cuốn sách khó
+tags: ["book review"]
 ---
 
 ### Hỏi 
