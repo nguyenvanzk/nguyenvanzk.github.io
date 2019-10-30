@@ -27,30 +27,26 @@ So let’s get to it.
 ## Contents
  
 
-SETUP
+### SETUP
 
-Creating a Demo App
+* Creating a Demo App
 
-CREATING A BINARY FRAMEWORK
+### CREATING A BINARY FRAMEWORK
 
-Explaining What Just Happened
-Adding a Very Basic Function
-Using Your Binary Framework in Your Demo App
-Recapping What You Just Did
+* Explaining What Just Happened
+* Adding a Very Basic Function
+* Using Your Binary Framework in Your Demo App
+* Recapping What You Just Did
 
-DISTRIBUTING A BINARY FRAMEWORK
+### DISTRIBUTING A BINARY FRAMEWORK
 
-Exporting Framework
-Creating a Second Test App
-Integrating Your Binary Framework in Your Test App
-Publishing Your Test App
-Recapping What You Just Did
+* Exporting Framework
+* Creating a Second Test App
+* Integrating Your Binary Framework in Your Test App
+* Publishing Your Test App
+* Recapping What You Just Did
 
-ONE MORE THING
-
- 
-
- 
+### ONE MORE THING
 
 ## Setup
  
