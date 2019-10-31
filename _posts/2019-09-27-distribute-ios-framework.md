@@ -2,6 +2,9 @@
 layout: post
 title: Cách tạo ra 1 iOS framework để distribute ra bên ngoài
 ---
+
+{% include toc.html %}
+
 So you have a solution to a problem that many other iOS developers have and you want to help them, but you also want to protect your code and build a business? Binary framework, that’s what you want.
 
 You might have noticed that you can’t see the source code of the UIKit frameworks you use to build your iOS apps on top of every day. That’s because Apple ships the UIKit as a binary framework in its iOS SDK.
@@ -19,35 +22,6 @@ I will walk you through creating an iOS binary framework and (spoiler alert: her
 We have quite the experience with this as we have been distributing the iOS Instabug SDK as a binary framework for many years now, through many changes (static to dynamic) and tools (migrating to CocoaPods), and from recently shipping one monolithic framework to two frameworks.
 
 So let’s get to it.
-
- 
-
- 
-
-## Contents
- 
-
-#### SETUP
-
-* Creating a Demo App
-
-#### CREATING A BINARY FRAMEWORK
-
-* Explaining What Just Happened
-* Adding a Very Basic Function
-* Using Your Binary Framework in Your Demo App
-* Recapping What You Just Did
-
-#### DISTRIBUTING A BINARY FRAMEWORK
-
-* Exporting Framework
-* Creating a Second Test App
-* Integrating Your Binary Framework in Your Test App
-* Publishing Your Test App
-* Recapping What You Just Did
-
-#### ONE MORE THING
-
 
 
 ## Setup
