@@ -7,25 +7,14 @@ Phím tắc làm việc với jekyll spacemacs
 
 {% include toc.html %}
 
-# vào Hyde mode để làm việc với jekeyll
+### Vào Hyde mode để làm việc với jekeyll
 1. cd vào thư mục `_post_`
 2. `M-m a j`: vào hyde mode 
 
-# Tạo draft post mới
-1. Nhấn `n`
-
-# Mở post 
-1. `RET`
-
-# Tải lại danh sách posts
-1. `g`
-
-
-# Xoá post
-1. `d`
-
-# Commit post
-1. `c`
-
-# Chuyển draft post thành post chính thức 
-1. `p`
+### Một số thao tác
+1. xsTạo draft post mới `n`
+2. Mở post `RET`
+3. Tải lại danh sách posts `g`
+4. Xoá post `d`
+5. Commit post `c`
+6. Chuyển draft post thành post chính thức `p`
