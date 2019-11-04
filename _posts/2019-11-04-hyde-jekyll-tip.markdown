@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "hyde-jekyll-tip"
+title: "Tip cho hyde-jekyll trên emacs"
 ---
 
 Phím tắc làm việc với jekyll spacemacs 
