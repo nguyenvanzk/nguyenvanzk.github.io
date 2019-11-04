@@ -12,7 +12,7 @@ Phím tắc làm việc với jekyll spacemacs
 2. `M-m a j`: vào hyde mode 
 
 ### Một số thao tác
-1. xsTạo draft post mới `n`
+1. Tạo draft post mới `n`
 2. Mở post `RET`
 3. Tải lại danh sách posts `g`
 4. Xoá post `d`
