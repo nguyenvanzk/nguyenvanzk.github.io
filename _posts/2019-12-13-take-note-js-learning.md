@@ -3,7 +3,7 @@ layout: post
 title: Take note js learning
 date: 2019-12-13 11:23 +0700
 ---
-> https://javascript.info/object-methods
+> (https://javascript.info)
 
 # Biến & constant
 1. Dùng let để định nghĩa varibles. Phải khai báo let trước khi dùng để tránh compiler báo lỗi.
