@@ -42,7 +42,7 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 
 
 # symbol 
-- Khởi tạo `javascript let id = Symbol("name")`
+- Khởi tạo `let id = Symbol("name")`
 - Các symbol cùng name nhưng chúng là khác nhau.
 - Symbol kg dc convert string 1 cách tự động, gọi `toString()` hoặc `description`.
 - Lợi thế `Symbol` so với `string`: dùng 1 biến được tạo ở chỗ khác, ta cần thêm property, nếu dùng string thì compiler sẽ có thể ghi đè lên property của biến, dùng symbol tránh được, ví dụ: đã có `user["id"]`, thì nếu ta ghi `user[Symbol("id")]` thì property `id` sẽ không bị ghi đè. (TODO: chưa rõ ràng)
