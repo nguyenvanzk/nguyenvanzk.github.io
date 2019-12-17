@@ -51,10 +51,10 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 - khởi tạo: `Symbol.for(key)`: nếu có trong registry lấy ra, else thì tạo mới.
 - `Symbol.keyFor(sym)`: trả về tên của symbol
 ## System symbol:
-Symbol.hasInstance
-Symbol.isConcatSpreadable
-Symbol.iterator
-Symbol.toPrimitive
+- Symbol.hasInstance
+- Symbol.isConcatSpreadable
+- Symbol.iterator
+- Symbol.toPrimitive
 
 # typeof 
 dùng như operator (eg: typeof x) hoặc function( typeof(x)), để lấy kiểu dữ liệu
