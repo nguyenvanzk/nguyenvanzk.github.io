@@ -34,16 +34,38 @@ nothing, empty, value unknown
 chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undefined` để check có giá trị hay kg.
 
 # object
-tbd
+Được dùng như 1 dictionary trong swift: 
+- key là String hoặc symbol (thường là string), kiểu khác thì sẽ bị ép về string
+- value thì Any
+
+
 # symbol 
-tbd
+- Khởi tạo `let id = Symbol("name")`
+- Các symbol cùng name nhưng chúng là khác nhau.
+- Symbol kg dc convert string 1 cách tự động, gọi `toString()` hoặc `description`.
+- Lợi thế `Symbol` so với `string`: dùng 1 biến được tạo ở chỗ khác, ta cần thêm property, nếu dùng string thì compiler sẽ có thể ghi đè lên property của biến, dùng symbol tránh được, ví dụ: đã có `user["id"]`, thì nếu ta ghi `user[Symbol("id")]` thì property `id` sẽ không bị ghi đè. (TODO: chưa rõ ràng)
+- Dùng symbol để làm key của object, thì phải đặt trong `[]`, eg: `{[id]: 1}`
+- Bị bỏ qua khi dùng `for...in`, `Object.keys(user)`.
+- Vẫn ghi nhận bởi `Object.assign`
+## Global symbol
+- khởi tạo: `Symbol.for(key)`: nếu có trong registry lấy ra, else thì tạo mới.
+- `Symbol.keyFor(sym)`: trả về tên của symbol
+## System symbol:
+Symbol.hasInstance
+Symbol.isConcatSpreadable
+Symbol.iterator
+Symbol.toPrimitive
+
 # typeof 
 dùng như operator (eg: typeof x) hoặc function( typeof(x)), để lấy kiểu dữ liệu
 
 
 # Garbage collection
-Nếu 1 giá trị không còn tham chiếu (unreachable) thì sẽ dc GC release.
+- Được thực hiện tự động.
+- Nếu 1 giá trị không còn tham chiếu (unreachable) thì sẽ dc GC release.
+
 ## Interlinked objects
 Các biến tham chiếu lẫn nhau, cần xoá đủ tham chiếu của các biến để đưa về unreachable status.
+
 ## Unreachable island
 Các biến tham chiếu lẫn nhau, nhưng kg có biến root (global) nào ref đến thì sẽ bị release.
