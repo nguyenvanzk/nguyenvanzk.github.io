@@ -41,7 +41,7 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 - Nếu key là number thì sẽ dc sort lại.
 - value thì Any
 - Có thể khởi tạo object từ 1 array kiểu key, value với `Object.fromEntries([[key, value],..])`
-- Khởi tạo với map `Object.fromEntries(map.entries())` hoặc `Object.fromEntries(map)` (vì `Object.fromEntries` cần 1 iterator, nếu gọi map thì trả về iterator).
+- Khởi tạo với map `Object.fromEntries(map.entries())` hoặc `Object.fromEntries(map)` (vì `Object.fromEntries` cần 1 iterator, nếu gọi map thì đã trả về iterator).
 - Hỗ trợ keys(), values(), entries(), nhưng gọi thông qua class Object (ex: Object.keys(obj)), và trả về array thay vì 1 iterator.
 
 # Map 
@@ -51,7 +51,7 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 - `new Map()`: 
 + Khởi tạo map, có thể truyền vào 1 array kiểu [key, value] để init map.
 + Nếu muốn khởi tạo với object thì `new Map(Object.entries(object))`
-
+```
 map.set(key, value) – stores the value by the key.
 map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.
 map.has(key) – returns true if the key exists, false otherwise.
@@ -62,6 +62,7 @@ map.size – returns the current element count.
 map.keys() – trả về iterable cho keys,
 map.values() – trả về iterable cho values,
 map.entries() – trả về iterable cho bộ [key, value], dc gọi mặt định khi sử dụng for..of.
+```
 
 - Khi dùng loop thì thứ tự lặp theo thứ tự insert.
 - Có thể dùng forEach để loop: `map.forEach((value, key) => {})`
