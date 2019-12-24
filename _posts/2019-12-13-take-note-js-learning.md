@@ -47,22 +47,19 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 # Map 
 - Lưu trữ key-value tương tự như object, nhưng cho phép dùng key với kiểu dữ liệu bất kì.
 - Thứ tự khi insert được bảo toàn.
-
 - `new Map()`: 
 + Khởi tạo map, có thể truyền vào 1 array kiểu [key, value] để init map.
 + Nếu muốn khởi tạo với object thì `new Map(Object.entries(object))`
-```
-map.set(key, value) – stores the value by the key.
-map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.
-map.has(key) – returns true if the key exists, false otherwise.
-map.delete(key) – removes the value by the key.
-map.clear() – removes everything from the map.
-map.size – returns the current element count.
-
-map.keys() – trả về iterable cho keys,
-map.values() – trả về iterable cho values,
-map.entries() – trả về iterable cho bộ [key, value], dc gọi mặt định khi sử dụng for..of.
-```
+- Methods:
++ map.set(key, value) – stores the value by the key.
++ map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.
++ map.has(key) – returns true if the key exists, false otherwise.
++ map.delete(key) – removes the value by the key.
++ map.clear() – removes everything from the map.
++ map.size – returns the current element count.
++ map.keys() – trả về iterable cho keys.
++ map.values() – trả về iterable cho values.
++ map.entries() – trả về iterable cho bộ [key, value], dc gọi mặt định khi sử dụng for..of.
 
 - Khi dùng loop thì thứ tự lặp theo thứ tự insert.
 - Có thể dùng forEach để loop: `map.forEach((value, key) => {})`
