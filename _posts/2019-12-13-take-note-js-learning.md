@@ -40,6 +40,22 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 - key là String hoặc symbol (thường là string), kiểu khác thì sẽ bị ép về string
 - value thì Any
 
+# Map 
+Lưu trữ key-value tương tự như object, nhưng cho phép dùng key với kiểu dữ liệu bất kì.
+new Map() – creates the map.
+map.set(key, value) – stores the value by the key.
+map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.
+map.has(key) – returns true if the key exists, false otherwise.
+map.delete(key) – removes the value by the key.
+map.clear() – removes everything from the map.
+map.size – returns the current element count.
+
+map.keys() – returns an iterable for keys,
+map.values() – returns an iterable for values,
+map.entries() – returns an iterable for entries [key, value], it’s used by default in for..of.
+
+
+
 
 # symbol 
 - Khởi tạo `let id = Symbol("name")`
@@ -49,18 +65,24 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 - Dùng symbol để làm key của object, thì phải đặt trong `[]`, eg: `{[id]: 1}`
 - Bị bỏ qua khi dùng `for...in`, `Object.keys(user)`.
 - Vẫn ghi nhận bởi `Object.assign`
+
 ## Global symbol
 - khởi tạo: `Symbol.for(key)`: nếu có trong registry lấy ra, else thì tạo mới.
 - `Symbol.keyFor(sym)`: trả về tên của symbol
+
 ## System symbol:
-- Symbol.hasInstance
-- Symbol.isConcatSpreadable
-- Symbol.iterator
-- Symbol.toPrimitive
+Biểu diễn `[Symbol.iterator]`
+- `Symbol.hasInstance`
+- `Symbol.isConcatSpreadable`
+- `Symbol.iterator`
+- `Symbol.toPrimitive`
 
 # typeof 
 dùng như operator (eg: typeof x) hoặc function( typeof(x)), để lấy kiểu dữ liệu
 
+# for loop
+- Dùng `for let [var] of [iterator]`
+- Dùng `for const [var] of [iterator]` 
 
 # Garbage collection
 - Được thực hiện tự động.
