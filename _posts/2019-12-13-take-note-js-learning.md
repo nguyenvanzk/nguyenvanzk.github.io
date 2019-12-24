@@ -38,11 +38,20 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 # object
 Được dùng như 1 dictionary trong swift: 
 - key là String hoặc symbol (thường là string), kiểu khác thì sẽ bị ép về string
+- Nếu key là number thì sẽ dc sort lại.
 - value thì Any
+- Có thể khởi tạo object từ 1 array kiểu key, value với `Object.fromEntries([[key, value],..])`
+- Khởi tạo với map `Object.fromEntries(map.entries())` hoặc `Object.fromEntries(map)` (vì `Object.fromEntries` cần 1 iterator, nếu gọi map thì trả về iterator).
+- Hỗ trợ keys(), values(), entries(), nhưng gọi thông qua class Object (ex: Object.keys(obj)), và trả về array thay vì 1 iterator.
 
 # Map 
-Lưu trữ key-value tương tự như object, nhưng cho phép dùng key với kiểu dữ liệu bất kì.
-new Map() – creates the map.
+- Lưu trữ key-value tương tự như object, nhưng cho phép dùng key với kiểu dữ liệu bất kì.
+- Thứ tự khi insert được bảo toàn.
+
+- `new Map()`: 
++ Khởi tạo map, có thể truyền vào 1 array kiểu [key, value] để init map.
++ Nếu muốn khởi tạo với object thì `new Map(Object.entries(object))`
+
 map.set(key, value) – stores the value by the key.
 map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.
 map.has(key) – returns true if the key exists, false otherwise.
@@ -50,10 +59,39 @@ map.delete(key) – removes the value by the key.
 map.clear() – removes everything from the map.
 map.size – returns the current element count.
 
-map.keys() – returns an iterable for keys,
-map.values() – returns an iterable for values,
-map.entries() – returns an iterable for entries [key, value], it’s used by default in for..of.
+map.keys() – trả về iterable cho keys,
+map.values() – trả về iterable cho values,
+map.entries() – trả về iterable cho bộ [key, value], dc gọi mặt định khi sử dụng for..of.
 
+- Khi dùng loop thì thứ tự lặp theo thứ tự insert.
+- Có thể dùng forEach để loop: `map.forEach((value, key) => {})`
+
+# Weak Map
+- Khác với map: key phải là kiểu object, cho phép GC thu hồi value của nó ngay khi không còn tham chiếu từ object khác (vẫn còn tham chiếu từ weakmap).
+- Khởi tạo `new WeakMap()`
+- Không hỗ trợ iterator cũng như `keys()`, `values()`, `entries()`.
+- Các trường hợp sử dụng: 
++ Lưu trữ data của code khác (secondary).
++ Caching
+
+# Weak Set
+- Tương tự weak map nhưng dùng cho Set
+
+# Set
+- Lưu trữ value không lặp lại
+
+new Set(iterable) – creates the set, and if an iterable object is provided (usually an array), copies values from it into the set.
+set.add(value) – adds a value, returns the set itself.
+set.delete(value) – removes the value, returns true if value existed at the moment of the call, otherwise false.
+set.has(value) – returns true if the value exists in the set, otherwise false.
+set.clear() – removes everything from the set.
+set.size – is the elements count.
+
+- Có thể lặp với `for..of` hoặc `forEach`
+
+set.keys() – returns an iterable object for values,
+set.values() – same as set.keys(), for compatibility with Map,
+set.entries() – returns an iterable object for entries [value, value], exists for compatibility with Map.
 
 
 
