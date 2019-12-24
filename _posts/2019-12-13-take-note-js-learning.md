@@ -77,21 +77,18 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 
 # Set
 - Lưu trữ value không lặp lại
-
-new Set(iterable) – creates the set, and if an iterable object is provided (usually an array), copies values from it into the set.
-set.add(value) – adds a value, returns the set itself.
-set.delete(value) – removes the value, returns true if value existed at the moment of the call, otherwise false.
-set.has(value) – returns true if the value exists in the set, otherwise false.
-set.clear() – removes everything from the set.
-set.size – is the elements count.
+- Methods:
++ new Set(iterable) – creates the set, and if an iterable object is provided (usually an array), copies values from it into the set.
++ set.add(value) – adds a value, returns the set itself.
++ set.delete(value) – removes the value, returns true if value existed at the moment of the call, otherwise false.
++ set.has(value) – returns true if the value exists in the set, otherwise false.
++ set.clear() – removes everything from the set.
++ set.size – is the elements count.
++ set.keys() – returns an iterable object for values,
++ set.values() – same as set.keys(), for compatibility with Map,
++ set.entries() – returns an iterable object for entries [value, value], exists for compatibility with Map.
 
 - Có thể lặp với `for..of` hoặc `forEach`
-
-set.keys() – returns an iterable object for values,
-set.values() – same as set.keys(), for compatibility with Map,
-set.entries() – returns an iterable object for entries [value, value], exists for compatibility with Map.
-
-
 
 # symbol 
 - Khởi tạo `let id = Symbol("name")`
