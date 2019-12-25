@@ -61,7 +61,7 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
   * map.values() – trả về iterable cho values.
   * map.entries() – trả về iterable cho bộ [key, value], dc gọi mặt định khi sử dụng for..of.
   * Khi dùng loop thì thứ tự lặp theo thứ tự insert.
-  * Có thể dùng forEach để loop: `map.forEach((value, key) => {})`
+- Có thể dùng forEach để loop: `map.forEach((value, key) => {})`
 
 # Weak Map
 - Khác với map: key phải là kiểu object, cho phép GC thu hồi value của nó ngay khi không còn tham chiếu từ object khác (vẫn còn tham chiếu từ weakmap).
