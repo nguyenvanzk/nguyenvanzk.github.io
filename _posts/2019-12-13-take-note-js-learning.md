@@ -8,8 +8,8 @@ date: 2019-12-13 11:23 +0700
 # Biến & constant
 1. Dùng let để định nghĩa varibles. Phải khai báo let trước khi dùng để tránh compiler báo lỗi.
 2. const: 
-+ Nếu const có giá trị lúc define và không đổi thì tên dc capitalize tất cả word, dùng _ để nối.
-+ Nếu const  có giá trị lúc gán và sau đó không đổi thì đặt tên như biến.
+- Nếu const có giá trị lúc define và không đổi thì tên dc capitalize tất cả word, dùng _ để nối.
+- Nếu const  có giá trị lúc gán và sau đó không đổi thì đặt tên như biến.
 
 # Number:
 1. Có các hằng số: Infinity, -Infinity và NaN
@@ -20,7 +20,7 @@ date: 2019-12-13 11:23 +0700
 1. ngoài string dùng `' '` và `" "`, có thêm backticks string ``. Dùng backticks string để thêm vào biểu thức `${}`
 
 ```js
-`ket qua la ${1 + 2}`
+`ket qua la ${1 - 2}`
 ```
 sẽ cho kết quả  `ket qua la 3`
 
@@ -47,19 +47,19 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 # Map 
 - Lưu trữ key-value tương tự như object, nhưng cho phép dùng key với kiểu dữ liệu bất kì.
 - Thứ tự khi insert được bảo toàn.
-- `new Map()`: 
-+ Khởi tạo map, có thể truyền vào 1 array kiểu [key, value] để init map.
-+ Nếu muốn khởi tạo với object thì `new Map(Object.entries(object))`
-- Methods:
-+ map.set(key, value) – stores the value by the key.
-+ map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.
-+ map.has(key) – returns true if the key exists, false otherwise.
-+ map.delete(key) – removes the value by the key.
-+ map.clear() – removes everything from the map.
-+ map.size – returns the current element count.
-+ map.keys() – trả về iterable cho keys.
-+ map.values() – trả về iterable cho values.
-+ map.entries() – trả về iterable cho bộ [key, value], dc gọi mặt định khi sử dụng for..of.
+* `new Map()`: 
+- Khởi tạo map, có thể truyền vào 1 array kiểu [key, value] để init map.
+- Nếu muốn khởi tạo với object thì `new Map(Object.entries(object))`
+* Methods:
+- map.set(key, value) – stores the value by the key.
+- map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.
+- map.has(key) – returns true if the key exists, false otherwise.
+- map.delete(key) – removes the value by the key.
+- map.clear() – removes everything from the map.
+- map.size – returns the current element count.
+- map.keys() – trả về iterable cho keys.
+- map.values() – trả về iterable cho values.
+- map.entries() – trả về iterable cho bộ [key, value], dc gọi mặt định khi sử dụng for..of.
 
 - Khi dùng loop thì thứ tự lặp theo thứ tự insert.
 - Có thể dùng forEach để loop: `map.forEach((value, key) => {})`
@@ -68,25 +68,25 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 - Khác với map: key phải là kiểu object, cho phép GC thu hồi value của nó ngay khi không còn tham chiếu từ object khác (vẫn còn tham chiếu từ weakmap).
 - Khởi tạo `new WeakMap()`
 - Không hỗ trợ iterator cũng như `keys()`, `values()`, `entries()`.
-- Các trường hợp sử dụng: 
-+ Lưu trữ data của code khác (secondary).
-+ Caching
+* Các trường hợp sử dụng: 
+- Lưu trữ data của code khác (secondary).
+- Caching
 
 # Weak Set
 - Tương tự weak map nhưng dùng cho Set
 
 # Set
 - Lưu trữ value không lặp lại
-- Methods:
-+ new Set(iterable) – creates the set, and if an iterable object is provided (usually an array), copies values from it into the set.
-+ set.add(value) – adds a value, returns the set itself.
-+ set.delete(value) – removes the value, returns true if value existed at the moment of the call, otherwise false.
-+ set.has(value) – returns true if the value exists in the set, otherwise false.
-+ set.clear() – removes everything from the set.
-+ set.size – is the elements count.
-+ set.keys() – returns an iterable object for values,
-+ set.values() – same as set.keys(), for compatibility with Map,
-+ set.entries() – returns an iterable object for entries [value, value], exists for compatibility with Map.
+* Methods:
+- new Set(iterable) – creates the set, and if an iterable object is provided (usually an array), copies values from it into the set.
+- set.add(value) – adds a value, returns the set itself.
+- set.delete(value) – removes the value, returns true if value existed at the moment of the call, otherwise false.
+- set.has(value) – returns true if the value exists in the set, otherwise false.
+- set.clear() – removes everything from the set.
+- set.size – is the elements count.
+- set.keys() – returns an iterable object for values,
+- set.values() – same as set.keys(), for compatibility with Map,
+- set.entries() – returns an iterable object for entries [value, value], exists for compatibility with Map.
 
 - Có thể lặp với `for..of` hoặc `forEach`
 
