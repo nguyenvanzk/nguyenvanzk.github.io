@@ -90,8 +90,27 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 
 # Datetime
 - `new Date()` hoặc dùng timestamp `new Date(milliseconds)`, `new Date(datestring)`, `new Date(year, month, date, hours, minutes, seconds, ms)`
-- 
-
+- Parse string -> date: 
+- Chú ý `getFullYear()` không dùng `getYear()`.
+- `getMonth()`: 0 -> 11
+- `getDate()`: 1 -> 31
+- `getHours(), getMinutes(), getSeconds(), getMilliseconds()`
+- `getDay()`: 0(Sunday) -> 6(Saturday)
+- Thêm vào 'UTC' vào ngay sau get để lấy gía trị tại UTC-0, eg: `getUTCFullYear()`
+- `getTime()`: trả về timestamp hoặc dùng `+dateObject`, trả về timestamp hiện tại `Date.now()`
+- `getTimezoneOffset()`: trả về phút chênh lệch timezone của local time & UTC-0.
+* Các hàm sau đây có phiên bản UTC (thêm vào sau set) trừ hàm `setTime`
+  * setFullYear(year, [month], [date])
+  * setMonth(month, [date])
+  * setDate(date)
+  * setHours(hour, [min], [sec], [ms])
+  * setMinutes(min, [sec], [ms])
+  * setSeconds(sec, [ms])
+  * setMilliseconds(ms)
+- autocorrection: JS sẽ tự điều chỉnh ngày nếu vượt range. Có thể dùng phép +/- để tăng giảm thời gian, js sẽ điều chỉnh tự động.
+- Trừ 2 ngày sẽ ra ms
+- `Date.parse(str)`: sẽ parse string và trả về timestamp. Format: YYYY-MM-DDTHH:mm:ss.sssZ (T: không thay đổi. Z: timezone, +-hh:mm)
+- Timestamp của JS là milliseconds
 
 # symbol 
 - Khởi tạo `let id = Symbol("name")`
