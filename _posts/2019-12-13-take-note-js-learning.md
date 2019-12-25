@@ -88,6 +88,11 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
   * set.entries() – returns an iterable object for entries [value, value], exists for compatibility with Map.
 - Có thể lặp với `for..of` hoặc `forEach`
 
+# Datetime
+- `new Date()` hoặc dùng timestamp `new Date(milliseconds)`, `new Date(datestring)`, `new Date(year, month, date, hours, minutes, seconds, ms)`
+- 
+
+
 # symbol 
 - Khởi tạo `let id = Symbol("name")`
 - Các symbol cùng name nhưng chúng là khác nhau.
@@ -124,3 +129,26 @@ Các biến tham chiếu lẫn nhau, cần xoá đủ tham chiếu của các bi
 
 ## Unreachable island
 Các biến tham chiếu lẫn nhau, nhưng kg có biến root (global) nào ref đến thì sẽ bị release.
+
+# Destructuring assignment
+## Iterator
+- Là một cú pháp cho phép ánh xạ phần tử từ array hoặc object thành các biến. 
+`let [var1, var2] = array;`
+- Bỏ qua phần tử bằng cách dùng `,`, eg: `let [var1,, var2] = arr;`
+- Dùng được với iterator, không giới hạn chỉ array.
+- Có thể gán cho object qua property, chứ kg giới hạn chỉ với biến.
+- Ta dùng khi duyệt qua hash/object với `for (let[k, v] of obj.entries())`.
+- Cú pháp `...`: sẽ nhận phần còn lại sau khi assign biến, sẽ là 1 iterator (array, map.entries(),...)
+- Nếu số biến nhiều hơn số phần tử, thì số biến vượt sẽ có giá trị `undefined`. Nếu muốn giá trị default ta khai báo dùng `[var1="default1", var2="default2]= array`. Default value có thể là expression hoặc là function call.
+
+## Object
+- Cú pháp: `let {var1, var2} = obj` (obj có key là var1, var2)
+- Nếu muốn đặt tên biến khác với object key thì dùng `let {var1: v1, var2: v2 } = obj`
+- Có thể gán default value dùng `var1 = defvalue`
+- Đặt tên biến custom & default value cùng lúc `let {key1: var1 = defvalue}`
+- Có thể dùng cú pháp rest `...` cho object, rest sẽ là một object.
+- Nếu muốn dùng `{var1, var2} = obj` với var1, var2 dc định nghĩa trc, ta phải đặt trong `()` để phân biệt với code block.
+- Có thể dùng nested destructuring để làm việc với object trong object.
+- Rất hữu ích để truyền  destructuring như biến của function, sẽ giúp hàm có label, dễ debug cũng như cung cấp default value. Chú ý: nếu muốn dùng toàn bộ là default value, ta phải truyền `tênHàm({})`
+
+
