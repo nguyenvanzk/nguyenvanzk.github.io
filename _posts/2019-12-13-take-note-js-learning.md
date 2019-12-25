@@ -170,4 +170,6 @@ Các biến tham chiếu lẫn nhau, nhưng kg có biến root (global) nào ref
 - Có thể dùng nested destructuring để làm việc với object trong object.
 - Rất hữu ích để truyền  destructuring như biến của function, sẽ giúp hàm có label, dễ debug cũng như cung cấp default value. Chú ý: nếu muốn dùng toàn bộ là default value, ta phải truyền `tênHàm({})`
 
+# JSON
+
 
