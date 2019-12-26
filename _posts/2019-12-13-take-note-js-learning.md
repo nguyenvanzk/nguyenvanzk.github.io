@@ -181,18 +181,45 @@ Các biến tham chiếu lẫn nhau, nhưng kg có biến root (global) nào ref
 * JSON.parse: JSON -> object
   * JSON.parse(str, [reviver]): reviver là một `function(key, value)` để parse JSON
 
+
 # Module
 - Gồm nhiều biến thể: AMD, CommonJS, UMD.
 - Define: 1 module là một file, một script là một module.
-* Import & export:
-  * `import {}` import chức năng từ module khác
-  * `export` là 1 label đánh dấu biến, function dc "thấy" bên ngoài module (tương tự public)
-  * VD: 
-  - `export function sayHi(user) {}` (sayHi.js)
-  - `import {sayHi} from './sayHi.js'` (main.js)
 - Luôn mặc định dùng strict mode.
 - Module khác chỉ dc truy cập vào biến, function dc đánh dấu `export` của module (*).
 - `independent top-level scope` áp dụng cho module và `<script type="module">` tức là theo (*).
 
+* Module execute style là defferred (Khác script thông thường: dc thực thi ngay tức khắc):
+  * Không block quá trình render HTML, chạy xong xong với các resource.
+  * Khi nào HTML ready thì mới chạy => nên show "loading text".
+  * Bảo lưu thứ tự thực thi theo thứ tự import.
+- Module làm việc với async. Còn non-module script thì async chỉ làm việc với external script.
+- Import module trên browser phải có đường dẫn (no "bare" module), không áp dụng cho nodejs và bundle tool.
+
+- Static import + export:
+* Static import
+  * `import {}` import chức năng từ module khác
+  * eg: `import {sayHi} from './sayHi.js'` (main.js)
+  * Import nhiều thành phần `import {item1, item2}`
+  * Import tất cả `import * as <obj>`, chỉ nên import thứ cần dùng (bundle tool sẽ biết để remove thứ không dùng, shorter name `sayHi()` thay vì `obj.sayHi()`, dễ refactor code vì có thể nhìn dc chỗ nào dùng).
+  * Dùng `as` trong import để đổi tên của đối tượng import 
+  * Khi dùng * thì sẽ import cả default name
+  * Có thể dùng một tên bất kì để import default
+  * Module code chỉ dc thực thi khi import lần đầu tiên, những chỗ import khác sẽ share kết quả từ lần thực thi đầu.
+  
+* Export
+  * `export` là 1 label đánh dấu biến, function, class dc "thấy" bên ngoài module (tương tự public)
+  * eg: `export function sayHi(user) {}` (sayHi.js)
+  * có thể export trên function hoặc export riêng, eg `export {method1, method2};`
+  * Dùng `as` trong export để đổi tên của đối tượng export, có thể dùng `default` name 
+  * Export default sẽ cho phép import class không cần dùng `{}`, eg `import User from './user.js'`
+  * Export default không có tên thì khi import ta dùng default để import, eg `import {default as Name}`
+  * Export from: import sau đó lập tức export. 
+  * Để Export from default, ta phải `export {default as Name} from './file'`
+  * Nếu như `export * from './file.js'` thì sẽ export named export, còn default sẽ bị bỏ qua.
+
+* Dynamic import
+  * import(modulePath) sẽ trả về 1 promise.
+  * import() kg phải là 1 function, nên không thể gán, hoặc dùng như parameter.
 
 
