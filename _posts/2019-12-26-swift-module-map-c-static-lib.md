@@ -10,7 +10,7 @@ date: 2019-12-26 14:59 +0700
 - Tham chiếu đến thư viện static (có thể của system), để dùng trong project.
 
 ## Modular framework
-```swift
+```objective-c
 framework module AFramework {
   umbrella header "AFramework.h"
 
@@ -23,7 +23,7 @@ framework module AFramework {
 TBD
 
 ## Using static library
-```swift
+```objective-c
 module CSDL2 [system] {
     header "shim.h"
     link "SDL2"
