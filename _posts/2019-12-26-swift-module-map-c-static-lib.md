@@ -23,7 +23,7 @@ framework module AFramework {
 TBD
 
 ## Using static library
-```objective-c
+```objc
 module CSDL2 [system] {
     header "shim.h"
     link "SDL2"
