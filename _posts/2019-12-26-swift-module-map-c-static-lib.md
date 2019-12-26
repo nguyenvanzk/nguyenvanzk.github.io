@@ -1,6 +1,6 @@
 ---
 layout: post
-title: swift-module-map-c-static-lib
+title: swift, Modulemap, Static library
 date: 2019-12-26 14:59 +0700
 ---
 {% include toc.html %}
