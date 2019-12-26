@@ -16,7 +16,8 @@ framework module AFramework {
 
   export *
   module * { export * }
-}```
+}
+```
 
 ## Static library
 TBD
@@ -27,7 +28,8 @@ module CSDL2 [system] {
     header "shim.h"
     link "SDL2"
     export *
-}```
+}
+```
 
 TBD
 
