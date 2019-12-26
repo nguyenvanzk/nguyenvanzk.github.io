@@ -171,5 +171,28 @@ Các biến tham chiếu lẫn nhau, nhưng kg có biến root (global) nào ref
 - Rất hữu ích để truyền  destructuring như biến của function, sẽ giúp hàm có label, dễ debug cũng như cung cấp default value. Chú ý: nếu muốn dùng toàn bộ là default value, ta phải truyền `tênHàm({})`
 
 # JSON
+* JSON.stringify: object -> JSON:
+  * Parser sẽ bỏ qua nếu property là function, symbol, hoặc undefined.
+  * Hỗ trợ parse nested object.
+  * Circular reference sẽ bị lỗi.
+  * JSON.stringify(value[, replacer, space]): replacer là array property được chuyển sang JSON, hoặc là 1 `function(key, value) -> value` để control việc convert data. space: nested level, sử dụng space.
+  * Nếu cung cấp toJSON, hàm này sẽ được gọi tự động.
+
+* JSON.parse: JSON -> object
+  * JSON.parse(str, [reviver]): reviver là một `function(key, value)` để parse JSON
+
+# Module
+- Gồm nhiều biến thể: AMD, CommonJS, UMD.
+- Define: 1 module là một file, một script là một module.
+* Import & export:
+  * `import {}` import chức năng từ module khác
+  * `export` là 1 label đánh dấu biến, function dc "thấy" bên ngoài module (tương tự public)
+  * VD: 
+  - `export function sayHi(user) {}` (sayHi.js)
+  - `import {sayHi} from './sayHi.js'` (main.js)
+- Luôn mặc định dùng strict mode.
+- Module khác chỉ dc truy cập vào biến, function dc đánh dấu `export` của module (*).
+- `independent top-level scope` áp dụng cho module và `<script type="module">` tức là theo (*).
+
 
 
