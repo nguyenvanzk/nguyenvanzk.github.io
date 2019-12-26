@@ -195,6 +195,7 @@ Các biến tham chiếu lẫn nhau, nhưng kg có biến root (global) nào ref
   * Bảo lưu thứ tự thực thi theo thứ tự import.
 - Module làm việc với async. Còn non-module script thì async chỉ làm việc với external script.
 - Import module trên browser phải có đường dẫn (no "bare" module), không áp dụng cho nodejs và bundle tool.
+
 ## Static import
   * `import {}` import chức năng từ module khác
   * eg: `import {sayHi} from './sayHi.js'` (main.js)
