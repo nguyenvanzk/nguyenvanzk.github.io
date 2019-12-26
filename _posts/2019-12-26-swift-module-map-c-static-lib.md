@@ -7,7 +7,7 @@ date: 2019-12-26 14:59 +0700
 
 # Modulemap
 - Dùng module map để tạo framework hoặc static library tự động. (?)
-- Tham chiếu đến thư viện system, để dùng trong project.
+- Tham chiếu đến thư viện static (có thể của system), để dùng trong project.
 
 ## Modular framework
 ```swift
