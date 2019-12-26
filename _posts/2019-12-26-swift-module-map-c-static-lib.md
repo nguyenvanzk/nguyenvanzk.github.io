@@ -10,7 +10,7 @@ date: 2019-12-26 14:59 +0700
 - Tham chiếu đến thư viện static (có thể của system), để dùng trong project.
 
 ## Modular framework
-```objective-c
+```objc
 framework module AFramework {
   umbrella header "AFramework.h"
 
