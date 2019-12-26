@@ -13,7 +13,7 @@ date: 2019-12-13 11:23 +0700
 - Nếu const có giá trị lúc define và không đổi thì tên dc capitalize tất cả word, dùng _ để nối.
 - Nếu const  có giá trị lúc gán và sau đó không đổi thì đặt tên như biến.
 
-# Number:
+# Number
 1. Có các hằng số: Infinity, -Infinity và NaN
 2. Kiểu BigInt: thêm `n` vào cuối số, biểu diễn number ngoài phạm vi -2^53 ~ 2^53 
 3. Tự động convert về number trong biểu thức. eg `"6" / "2"` trả về 3
@@ -127,7 +127,7 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 - khởi tạo: `Symbol.for(key)`: nếu có trong registry lấy ra, else thì tạo mới.
 - `Symbol.keyFor(sym)`: trả về tên của symbol
 
-## System symbol:
+## System symbol
 Biểu diễn `[Symbol.iterator]`
 - `Symbol.hasInstance`
 - `Symbol.isConcatSpreadable`
