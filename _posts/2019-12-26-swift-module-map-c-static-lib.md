@@ -35,5 +35,5 @@ TBD
 
 # links 
 > [http://nsomar.com/modular-framework-creating-and-using-them/](http://nsomar.com/modular-framework-creating-and-using-them/)
-> [https://clang.llvm.org/docs/Modules.html#id26] (https://clang.llvm.org/docs/Modules.html#id26)
+> [https://clang.llvm.org/docs/Modules.html#id26](https://clang.llvm.org/docs/Modules.html#id26)
 > [https://medium.com/allatoneplace/challenges-building-a-swift-framework-d882867c97f9](https://medium.com/allatoneplace/challenges-building-a-swift-framework-d882867c97f9)
