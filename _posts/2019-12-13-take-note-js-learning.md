@@ -183,6 +183,8 @@ Các biến tham chiếu lẫn nhau, nhưng kg có biến root (global) nào ref
 * JSON.parse: JSON -> object
   * JSON.parse(str, [reviver]): reviver là một `function(key, value)` để parse JSON
 
+# Class
+TBD
 
 # Module
 ## Chung
