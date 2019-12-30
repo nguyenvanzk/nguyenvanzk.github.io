@@ -234,6 +234,7 @@ TBD
 
 # Promise
 - constructor: `new Promise(executor)`, executor = `function(resolve, reject){}`,`resolve(value)`, `reject(error)`.
+
 * state & result: internal property, sẽ được truy cập thông qua `.then, .catch, .finally`
   * state: `pending` sau đó nhận  `fulfilled` hoặc `rejected`
   * result: `undefined` sau đó nhận `{value}` hoặc `error` 
@@ -241,10 +242,12 @@ TBD
   * catch: `promise.catch(errorHandler)` để xử lý lỗi, tương đương với `.then(null, errorHandler)`
   * finally: `.finally(f)` được thực thi kể cả có thành công hay không, nó sẽ chuyển tiếp kết quả và lỗi cho handler tiếp theo (.finally, sau đó là .then).
   * Vì sao dùng promise thay vì callback: thứ tự viết code tự nhiên hơn: thực thi, sau đó xử lý với then. Ta có thể subscribe nhiều hàm với promise thay vì chỉ 1 như callback.
+
 - Promise chaining:
   + `promise.then(f).then(f).then(f)` là chaining, kết quả của then trước dc truyền cho then sau.
   +  `promise.then(f); promise.then(f)`, đây không phải là chaining
   + Nếu .then, .catch, .finally trả về một promise thì phần còn lại của chuỗi (chain) sẽ đợi cho đến khi nào promise này dc settled (resolve/reject).
+
 * Quản lý lỗi:
   * catch
     + Có thể sử dụng catch sau cùng của then chaining để quản lý lỗi.
