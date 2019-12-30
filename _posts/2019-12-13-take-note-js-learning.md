@@ -245,7 +245,12 @@ TBD
   + `promise.then(f).then(f).then(f)` là chaining, kết quả của then trước dc truyền cho then sau.
   +  `promise.then(f); promise.then(f)`, đây không phải là chaining
   + Nếu .then, .catch, .finally trả về một promise thì phần còn lại của chuỗi (chain) sẽ đợi cho đến khi nào promise này dc settled (resolve/reject).
-- Quản lý lỗi:
+* Quản lý lỗi:
+  * catch
+    + Có thể sử dụng catch sau cùng của then chaining để quản lý lỗi.
+    + Khi throw error trong executor hoặc trong handler, thì nó sẽ dc convert qua promise và xem như 1 rejected promise.
+    + Khi gặp lỗi trong handler (then), cũng tự động chuyển thành rejected promise và chuyển cho .catch.
+    + Nếu throw error trong catch thì nó sẽ không được pass cho then tiếp theo (trừ khi có 1 catch trước then bắt error bị throw). 
 
 
 
