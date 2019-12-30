@@ -137,6 +137,13 @@ Biểu diễn `[Symbol.iterator]`
 # typeof 
 dùng như operator (eg: typeof x) hoặc function( typeof(x)), để lấy kiểu dữ liệu
 
+# Function 
+## Arrow function 
+- `(arg1, arg2,...argN) => expression`: sẽ tương đương với `function(arg1, arg2, argN){return expression;}`
+- Nếu empty parameter thì cũng phải `() -> expression`
+- Nếu multi-line thì dùng `{return expression;}`
+
+
 # for loop
 - Dùng `for let [var] of [iterator]`
 - Dùng `for const [var] of [iterator]` 
@@ -224,5 +231,23 @@ TBD
 ## Dynamic import
   * import(modulePath) sẽ trả về 1 promise.
   * import() kg phải là 1 function, nên không thể gán, hoặc dùng như parameter.
+
+# Promise
+- constructor: `new Promise(executor)`, executor = `function(resolve, reject){}`,`resolve(value)`, `reject(error)`.
+* state & result: internal property, sẽ được truy cập thông qua `.then, .catch, .finally`
+  * state: `pending` sau đó nhận  `fulfilled` hoặc `rejected`
+  * result: `undefined` sau đó nhận `{value}` hoặc `error` 
+  * then: `promise.then(function(result){}, function(error){})`
+  * catch: `promise.catch(errorHandler)` để xử lý lỗi, tương đương với `.then(null, errorHandler)`
+  * finally: `.finally(f)` được thực thi kể cả có thành công hay không, nó sẽ chuyển tiếp kết quả và lỗi cho handler tiếp theo (.finally, sau đó là .then).
+  * Vì sao dùng promise thay vì callback: thứ tự viết code tự nhiên hơn: thực thi, sau đó xử lý với then. Ta có thể subscribe nhiều hàm với promise thay vì chỉ 1 như callback.
+- Promise chaining:
+  + `promise.then(f).then(f).then(f)` là chaining, kết quả của then trước dc truyền cho then sau.
+  +  `promise.then(f); promise.then(f)`, đây không phải là chaining
+  + Nếu .then, .catch, .finally trả về một promise thì phần còn lại của chuỗi (chain) sẽ đợi cho đến khi nào promise này dc settled (resolve/reject).
+- Quản lý lỗi:
+
+
+
 
 
