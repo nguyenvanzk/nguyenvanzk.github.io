@@ -251,6 +251,7 @@ TBD
     + Khi throw error trong executor hoặc trong handler, thì nó sẽ dc convert qua promise và xem như 1 rejected promise.
     + Khi gặp lỗi trong handler (then), cũng tự động chuyển thành rejected promise và chuyển cho .catch.
     + Nếu throw error trong catch thì nó sẽ không được pass cho then tiếp theo (trừ khi có 1 catch trước then bắt error bị throw). 
+    + Nếu không quản lý (gán `.catch(f)`) thì trở thành reject promise, script sẽ bị die giống như `try...catch` không xử lý exception. Trình duyệt có thể quản lý loại error này: `window.addEventListener('unhandledrejection', function(event) {}`. Khi gặp loại lỗi này, không thể khôi phục => nên báo cho user + server để app không bị die.
 
 
 
