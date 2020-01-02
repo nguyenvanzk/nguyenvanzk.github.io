@@ -268,11 +268,11 @@ TBD
   * `Promise.race(iterable)` sẽ đợi đến khi promise con đầu tiên dc settled.
   * `Promise.resolve/reject` ít dùng, dc thay thế bởi async/await
 
-  * Promisification
-    * Là quá trình chuyển đổi 1 function nhận 1 callback thành 1 function trả về promise.
-    * Chỉ phù hợp với function gọi callback 1 lần.
-    * generic function: 
-    ```javascript 
+* Promisification
+  * Là quá trình chuyển đổi 1 function nhận 1 callback thành 1 function trả về promise.
+  * Chỉ phù hợp với function gọi callback 1 lần.
+  * generic function: 
+    ```js 
     function promisify(f, manyArgs = false) {
       return function (...args) {
         return new Promise((resolve, reject) => {
@@ -291,12 +291,13 @@ TBD
         });
       };
     };
-
+    ```
+    ```js
     // usage:
     f = promisify(f, true);
     f(...).then(arrayOfResults => ..., err => ...)
-  ```
-
+    Up```
+* Microtasks
 
 
 
