@@ -237,6 +237,7 @@ TBD
 
 * state & result: internal property, sẽ được truy cập thông qua `.then, .catch, .finally`
   * state: `pending` sau đó nhận  `fulfilled` hoặc `rejected`
+  * settled: thuật ngữ chỉ 1 promise nhận state là fulfilled hoặc rejected.
   * result: `undefined` sau đó nhận `{value}` hoặc `error` 
   * then: `promise.then(function(result){}, function(error){})`
   * catch: `promise.catch(errorHandler)` để xử lý lỗi, tương đương với `.then(null, errorHandler)`
@@ -255,6 +256,17 @@ TBD
     + Khi gặp lỗi trong handler (then), cũng tự động chuyển thành rejected promise và chuyển cho .catch.
     + Nếu throw error trong catch thì nó sẽ không được pass cho then tiếp theo (trừ khi có 1 catch trước then bắt error bị throw). 
     + Nếu không quản lý (gán `.catch(f)`) thì trở thành reject promise, script sẽ bị die giống như `try...catch` không xử lý exception. Trình duyệt có thể quản lý loại error này: `window.addEventListener('unhandledrejection', function(event) {}`. Khi gặp loại lỗi này, không thể khôi phục => nên báo cho user + server để app không bị die.
+
+* API:
+  * `Promise.all(iterable)` tạo promise mới có result là tổng hợp từ các promise con.
+    + Ta nên convert các job sang danh sách promise, xong truyền vào Promise.all
+    + Nếu một trong các promise con bị rejected thì promise cha sẽ bị rejected, các promise con còn lại sẽ bị bỏ qua (nhưng không cancel).
+    + Trong ds promise con, được phép truyền vào value không phải promise.
+  
+  * `Promise.allSettled(iterable)` sẽ đợi tất cả promise con hoàng thành, bất kể là fulfilled hay rejected. Trả về `{status: 'fullfilled'/'rejected, value: (response)/reason: (error object)}`
+
+  * `Promise.race(iterable)` sẽ đợi đến khi promise con đầu tiên dc settled.
+  * `Promise.resolve/reject` ít dùng, dc thay thế bởi async/await
 
 
 
