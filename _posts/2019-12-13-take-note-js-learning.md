@@ -243,6 +243,7 @@ TBD
   * catch: `promise.catch(errorHandler)` để xử lý lỗi, tương đương với `.then(null, errorHandler)`
   * finally: `.finally(f)` được thực thi kể cả có thành công hay không, nó sẽ chuyển tiếp kết quả và lỗi cho handler tiếp theo (.finally, sau đó là .then).
   * Vì sao dùng promise thay vì callback: thứ tự viết code tự nhiên hơn: thực thi, sau đó xử lý với then. Ta có thể subscribe nhiều hàm với promise thay vì chỉ 1 như callback.
+  * Thenable object: hỗ trợ .then, eg: `then(resolve, reject) {}`
 
 - Promise chaining:
   + `promise.then(f).then(f).then(f)` là chaining, kết quả của then trước dc truyền cho then sau.
@@ -302,5 +303,32 @@ TBD
   - "Unhandled rejection" xảy ra khi promise error không quản lí khi microtask queue đã thực thi hết.
 
 
+* Async/await
+  * Async: `async function f() { return 1}` đây là 1 function luôn trả về promise, nếu trả về 1 value, nó sẽ dc wrap qua promise.
+  - Có thể dùng với class method.
+  * Await: 
+    - Đặt trước promise để đợi cho đến khi nào promise dc settled.
+    - Await chỉ hoạt động bên trong async method.
+    - KHÔNG hoạt động trong top-level code, nếu muốn nó work thì đặt trong async anonymous function `(async () => {})();`
+    - Await hỗ trợ  Thenable object (có hỗ trợ .then)
+    - Khi nhận dc fulfilled trả về result, khi nhận dc rejection, sẽ throw error (ta dùng try..catch để hứng, nếu không có try..catch, ta dùng .catch để quản lý).
+  * Await & Async dùng dc với Promise.all
+  * Bài tập 1
+  ```js
+    async function loadJson(url) {
+      let response = await fetch(url);
+      if response.status = 200 {
+        let json = await response.json();
+        return json;
+      }
+      
+      throw new Error(response.status);
+    }
+
+    loadJson('no-such-user.json') // (3)
+      .catch(alert); 
+  ```
+
+  
 
 
