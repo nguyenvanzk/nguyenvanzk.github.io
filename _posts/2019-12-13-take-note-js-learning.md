@@ -257,7 +257,7 @@ TBD
     + Nếu throw error trong catch thì nó sẽ không được pass cho then tiếp theo (trừ khi có 1 catch trước then bắt error bị throw). 
     + Nếu không quản lý (gán `.catch(f)`) thì trở thành reject promise, script sẽ bị die giống như `try...catch` không xử lý exception. Trình duyệt có thể quản lý loại error này: `window.addEventListener('unhandledrejection', function(event) {}`. Khi gặp loại lỗi này, không thể khôi phục => nên báo cho user + server để app không bị die.
 
-* API:
+* API
   * `Promise.all(iterable)` tạo promise mới có result là tổng hợp từ các promise con.
     + Ta nên convert các job sang danh sách promise, xong truyền vào Promise.all
     + Nếu một trong các promise con bị rejected thì promise cha sẽ bị rejected, các promise con còn lại sẽ bị bỏ qua (nhưng không cancel).
@@ -267,6 +267,35 @@ TBD
 
   * `Promise.race(iterable)` sẽ đợi đến khi promise con đầu tiên dc settled.
   * `Promise.resolve/reject` ít dùng, dc thay thế bởi async/await
+
+  * Promisification
+    * Là quá trình chuyển đổi 1 function nhận 1 callback thành 1 function trả về promise.
+    * generic function: 
+    ```javascript 
+    function promisify(f, manyArgs = false) {
+      return function (...args) {
+        return new Promise((resolve, reject) => {
+          function callback(err, ...results) { // our custom callback for f
+            if (err) {
+              return reject(err);
+            } else {
+              // resolve with all callback results if manyArgs is specified
+              resolve(manyArgs ? results : results[0]);
+            }
+          }
+
+          args.push(callback);
+
+          f.call(this, ...args);
+        });
+      };
+    };
+
+    // usage:
+    f = promisify(f, true);
+    f(...).then(arrayOfResults => ..., err => ...)
+  ```
+
 
 
 
