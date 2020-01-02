@@ -262,9 +262,7 @@ TBD
     + Ta nên convert các job sang danh sách promise, xong truyền vào Promise.all
     + Nếu một trong các promise con bị rejected thì promise cha sẽ bị rejected, các promise con còn lại sẽ bị bỏ qua (nhưng không cancel).
     + Trong ds promise con, được phép truyền vào value không phải promise.
-  
   * `Promise.allSettled(iterable)` sẽ đợi tất cả promise con hoàng thành, bất kể là fulfilled hay rejected. Trả về `{status: 'fullfilled'/'rejected, value: (response)/reason: (error object)}`
-
   * `Promise.race(iterable)` sẽ đợi đến khi promise con đầu tiên dc settled.
   * `Promise.resolve/reject` ít dùng, dc thay thế bởi async/await
 
@@ -290,15 +288,18 @@ TBD
           f.call(this, ...args);
         });
       };
-    };
+    }
     ```
     ```js
     // usage:
     f = promisify(f, true);
     f(...).then(arrayOfResults => ..., err => ...)
-    Up```
-* Microtasks
+    ```
 
+* Microtasks
+  - Các handler (.then, .catch, .finally) là asyncronous
+  - Các promise action dc chứa trong microtask queue theo nguyên tắc FIFO, chỉ dc thực thi khi không còn thứ gì dc thực thi.
+  - "Unhandled rejection" xảy ra khi promise error không quản lí khi microtask queue đã thực thi hết.
 
 
 
