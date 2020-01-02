@@ -270,6 +270,7 @@ TBD
 
   * Promisification
     * Là quá trình chuyển đổi 1 function nhận 1 callback thành 1 function trả về promise.
+    * Chỉ phù hợp với function gọi callback 1 lần.
     * generic function: 
     ```javascript 
     function promisify(f, manyArgs = false) {
