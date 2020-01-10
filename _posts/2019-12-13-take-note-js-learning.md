@@ -41,6 +41,7 @@ chưa được gán giá trị, chỉ nên dùng `null` để gán, dùng `undef
 Được dùng như 1 dictionary trong swift: 
 - key là String hoặc symbol (thường là string), kiểu khác thì sẽ bị ép về string
 - Nếu key là number thì sẽ dc sort lại.
+- Nếu có 1 variables trùng tên với property của object, thì ta có thể gán varibles đó vào property của object theo cú pháp `let a = { var1, "name": name}` (object có property tên là var1). Có thể dùng cách này với hàm set để gán lại property: `setState {var1}`
 - value thì Any
 - Có thể khởi tạo object từ 1 array kiểu key, value với `Object.fromEntries([[key, value],..])`
 - Khởi tạo với map `Object.fromEntries(map.entries())` hoặc `Object.fromEntries(map)` (vì `Object.fromEntries` cần 1 iterator, nếu gọi map thì đã trả về iterator).
