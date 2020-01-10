@@ -143,6 +143,8 @@ dùng như operator (eg: typeof x) hoặc function( typeof(x)), để lấy ki�
 - `(arg1, arg2,...argN) => expression`: sẽ tương đương với `function(arg1, arg2, argN){return expression;}`
 - Nếu empty parameter thì cũng phải `() -> expression`
 - Nếu multi-line thì dùng `{return expression;}`
+- Arrow function khác hàm bình thường ở chỗ nó sẽ tự capture `this` trong method.
+- `(args) => ({property1: val1, property2: val2...})` arrow function trả về object.
 
 
 # for loop
