@@ -192,7 +192,26 @@ Các biến tham chiếu lẫn nhau, nhưng kg có biến root (global) nào ref
   * JSON.parse(str, [reviver]): reviver là một `function(key, value)` để parse JSON
 
 # Class
-TBD
+## Syntax 
+```js
+class MyClass {
+  // class methods
+  constructor() { ... }
+  method1() { ... }
+  method2() { ... }
+  method3() { ... }
+  ...
+}
+```
+- Các method không có `function` đứng trước.
+- Không dùng dấu , để ngăn cách các thành phần của class (method, property) như object.
+- class là một function.
+
+## Setter/ Getter/ shorthands
+- setter: `set name(value) {this._name = value;}`
+- getter:` get name() { return this._name;}`
+- Có thể khai báo property trong class.
+
 
 # Module
 ## Chung
