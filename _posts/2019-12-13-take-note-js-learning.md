@@ -210,6 +210,7 @@ class MyClass {
 ## Setter/ Getter/ shorthands
 - setter: `set name(value) {this._name = value;}`
 - getter:` get name() { return this._name;}`
+- dùng `this._name` để tham chiếu tên biến nhằm ngăn vòng lặp vô hạn khi truy cập property.
 - Có thể khai báo property trong class.
 
 
