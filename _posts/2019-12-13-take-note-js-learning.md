@@ -245,7 +245,7 @@ class MyClass {
   * eg: `export function sayHi(user) {}` (sayHi.js)
   * có thể export trên function hoặc export riêng, eg `export {method1, method2};`
   * Dùng `as` trong export để đổi tên của đối tượng export, có thể dùng `default` name 
-  * Export default với cú pháp: `export default Class`
+  * Export default với cú pháp: `export default Class`.
   * Export default sẽ cho phép import class không cần dùng `{}`, eg `import User from './user.js'`
   * Export default không có tên thì khi import ta dùng default để import, eg `import {default as Name}`
   * Export from: import sau đó lập tức export. 
