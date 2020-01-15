@@ -38,6 +38,13 @@ date: 2019-12-27 08:50 +0700
   * controlled component.
   * function component: chỉ có hàm render() và kg có state riêng => định nghĩa 1 function có parameter là props.
 
+# Tips
+ - Thêm hình ở local storage
+ ```js 
+ import avatar from './avatar.png'
+
+ <image src={avatar} /> 
+ ```
 
 # Luyện tập
   ##  Copywork
