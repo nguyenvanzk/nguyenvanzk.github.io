@@ -4,6 +4,8 @@ title: Take note React learning
 date: 2019-12-27 08:50 +0700
 ---
 
+{% include toc.html %}
+
 # Cơ bản
 
 - Build component kế thừa từ React.Component `class ComponentA extends Component{}`
