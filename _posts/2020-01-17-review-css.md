@@ -6,7 +6,7 @@ date: 2020-01-17 08:52 +0700
 
 {% include toc.html %}
 
-# Common
+# common
 * convension <https://cssguidelin.es>
 
 # class
@@ -23,7 +23,15 @@ date: 2020-01-17 08:52 +0700
 # image
 - Dùng width, height để xác định kích cỡ hiển thị 
 
-# Border
+# border
 - style, color, width
 - radius: bo góc dùng pixel hoặc %
+
+# div
+TBD
+
+# id
+- chỉ áp dụng cho 1 element, có độ ưu tiên cao hơn class.
+
+# padding, margin, border
 
