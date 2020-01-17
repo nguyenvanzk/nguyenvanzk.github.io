@@ -17,7 +17,13 @@ date: 2020-01-17 08:52 +0700
 # font
 - font name là case-sensitive.
 - dùng font-family: FAMILY_NAME, GENERIC_NAME (FAMILY_NAME: font chính, GENERIC_NAME dùng khi font chính bị failed, có khoản space trong tên thì phải đặt trong "") để set font.
-- Nếu font không có trong hệ thống, ta có thể sử dụng font google ```html <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">```
+- Nếu font không có trong hệ thống, ta có thể sử dụng font google `<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">`
 - Default browser font: `monospace, serif, sans-serif`
 
-# image:
+# image
+- Dùng width, height để xác định kích cỡ hiển thị 
+
+# Border
+- style, color, width
+- radius: bo góc dùng pixel hoặc %
+
