@@ -58,18 +58,18 @@ summary:
 - truy cập đến phần tử như array.
 -  hàm thông dụng: `length`.
 - dùng control flow collection để build collection (collection if và collection for). 
-```
-var nav = [
-  'Home',
-  if (promoActive) 'Outlet'
-];
+  ```dart
+  var nav = [
+    'Home',
+    if (promoActive) 'Outlet'
+  ];
 
-var listOfInts = [1, 2, 3];
-var listOfStrings = [
-  '#0',
-  for (var i in listOfInts) '#$i'
-];
-```
+  var listOfInts = [1, 2, 3];
+  var listOfStrings = [
+    '#0',
+    for (var i in listOfInts) '#$i'
+  ];
+  ```
 ## set 
 - các phần tử trong set phải duy nhất và chúng kg dc sắp xếp theo thứ tự.
 - cú pháp: `var halogens = {'a', 'b', 'c'};`
