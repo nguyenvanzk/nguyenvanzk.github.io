@@ -12,7 +12,7 @@ summary:
 # Chung 
 - Version Dart 2.7.
 - Tất cả đều kế thừ từ Object class.
-- Dùng _ để đánh dấu biến, hàm là private (kg có public, private, protected).
+- Dùng `_` để đánh dấu biến, hàm là private (kg có public, private, protected).
 - Câu lệnh kết thúc bằng `;` như java.
 - Khởi tạo object `ClassName()`, từ khóa `new` là optional.
 
