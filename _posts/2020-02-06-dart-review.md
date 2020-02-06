@@ -53,15 +53,16 @@ summary:
 - kiểu dữ liệu của phần tử phải giống nhau.
 - ex `var list = [1, 2, 3];`.
 - dùng 'spread operator' `...` (list not null) và 'null-aware spread operator'`...?` (list maybe null) để insert items của list vào 1 collection.
+- compile-time constants: `var list = cons [1, 2, 3];`.
+- truy cập đến phần tử như array.
+-  hàm thông dụng: `length`.
 - dùng collection if và collection for để build collection.
 ```
 var nav = [
   'Home',
   if (promoActive) 'Outlet'
 ];
-```
 
-```
 var listOfInts = [1, 2, 3];
 var listOfStrings = [
   '#0',
@@ -69,4 +70,13 @@ var listOfStrings = [
 ];
 ```
 ## set 
+- các phần tử trong set phải duy nhất và chúng kg dc sắp xếp theo thứ tự.
+- cú pháp: `var halogens = {'a', 'b', 'c'};`
+- khởi tạo empty set phải kèm type argument `var names = <String>{};`
+- compile-time constant: `final a = cons { 1, 2, 3};`.
+- hàm thông dụng: `add, addAll(iterable), length`.
+
+## maps
+- 
+
 
