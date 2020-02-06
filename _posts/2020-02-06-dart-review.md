@@ -14,6 +14,7 @@ summary:
 - Tất cả đều kế thừ từ Object class.
 - Dùng _ để đánh dấu biến, hàm là private (kg có public, private, protected).
 - Câu lệnh kết thúc bằng `;` như java.
+- Khởi tạo object `ClassName()`, từ khóa `new` là optional.
 
 # Biến
 - Khai báo `var` và phải khởi tạo giá trị để interfered kiểu data: `var bien = 1`.
@@ -56,7 +57,7 @@ summary:
 - compile-time constants: `var list = cons [1, 2, 3];`.
 - truy cập đến phần tử như array.
 -  hàm thông dụng: `length`.
-- dùng collection if và collection for để build collection.
+- dùng control flow collection để build collection (collection if và collection for). 
 ```
 var nav = [
   'Home',
@@ -77,6 +78,22 @@ var listOfStrings = [
 - hàm thông dụng: `add, addAll(iterable), length`.
 
 ## maps
-- 
+- khởi tạo bằng:
+  + map literal:  `var gifts = {1: 'k1', 2: 'k2'};`  ~ Map<int, string>
+  + `Map` type: `var gift = Map();`
+  + truy cập đến phần tử bằng key như swift `gift[key]`.
+  + nếu không có phần tử thì trả về null.
+  + dùng `length` để trả về số phần tử.
+  + hỗ trợ toán tử spread và control flow collection.
+  + compile-time const: `final gifts = const {1: 'k1', 2: 'k2'};`
+
+## runes
+- dùng để biểu diễn mã unicode của một string.
+- `\u{1f600}` ~ 😆
+
+## symbols
+- #identifier
+- là compile-time constants.
+
 
 
