@@ -10,6 +10,7 @@ summary:
 {% include toc.html %}
 
 # Chung 
+- Version Dart 2.7.
 - Tất cả đều kế thừ từ Object class.
 - Dùng _ để đánh dấu biến, hàm là private (kg có public, private, protected).
 - Câu lệnh kết thúc bằng `;` như java.
@@ -27,6 +28,45 @@ summary:
   - dùng `final` nếu giá trị được tính toán hoặc nhận lúc runtime.
   - dùng `const` để tạo ra immutable object.
 - các phần tử con của biến `const` thì sẽ là `const`, phải gán giá trị lúc khai báo.
-- các phần tử con của biến `final` thì kg hẳng là `final`. 
+- các phần tử con của biến `final` thì kg chắc là `final`. 
 
-# Kiểu dữ liệu 
+# Kiểu dữ liệu built-in
+## number 
+- int max 64 bits: có hàm static `parse(string)`, `toString()`
+- double 64 bit: có hàm static `parse(string)`, `toStringAsFixed()`
+- thư viện toán `dart:math`.
+- kiẻu int sẽ tự động dc convert qua double khi cần thiết.
+- number literal là compile-time constant.
+
+## string
+- dùng `'` hoặc `"` để thể hiện string.
+- nhúng vào string `${expr}` hoặc `$var`.
+- nối chuỗi dùng `+`.
+- multiline text thì dùng triple `'''` hoặc `"""`.
+- raw string thì `r'rawstring'`.
+- string literal là compile-time constant.
+
+## boolean
+- kiểu `bool` với 2 giá trị `true` `false`.
+
+## list
+- kiểu dữ liệu của phần tử phải giống nhau.
+- ex `var list = [1, 2, 3];`.
+- dùng 'spread operator' `...` (list not null) và 'null-aware spread operator'`...?` (list maybe null) để insert items của list vào 1 collection.
+- dùng collection if và collection for để build collection.
+```
+var nav = [
+  'Home',
+  if (promoActive) 'Outlet'
+];
+```
+
+```
+var listOfInts = [1, 2, 3];
+var listOfStrings = [
+  '#0',
+  for (var i in listOfInts) '#$i'
+];
+```
+## set 
+
