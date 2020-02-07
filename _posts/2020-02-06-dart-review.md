@@ -5,7 +5,7 @@ date: 2020-02-06 08:55
 category: 
 author: 
 tags: [dart, flutter]
-summary: 
+summary: Review dart language để dùng flutter
 ---
 {% include toc.html %}
 
@@ -18,6 +18,7 @@ summary:
 
 # Biến
 - Khai báo `var` và phải khởi tạo giá trị để interfered kiểu data: `var bien = 1`.
+- Nếu khai báo `var` nhưng không có kiểu thì sẽ tự lấy kiểu là dynamic
 - Khai báo `int bien;` hoặc `int biến = 0;`.
 - Nếu kg gán giá trị khi khai báo thì biến sẽ nhận null.
 - `final`, `const` để chỉ biến có thể khởi gán 1 lần, không được phép gán lại. 
@@ -102,7 +103,7 @@ summary:
 
 ## optional param
 - ta định nghĩa bằng cách dùng `{}`, ví dụ: `void m1({int param1, int param2})` thì ta có `m1(param1: 1, param2: 2)`
-- 
+-  
 
 
 
