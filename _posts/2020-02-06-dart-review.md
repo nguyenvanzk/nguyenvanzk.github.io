@@ -103,7 +103,32 @@ summary: Review dart language để dùng flutter
 
 ## optional param
 - ta định nghĩa bằng cách dùng `{}`, ví dụ: `void m1({int param1, int param2})` thì khi goị hàm `m1(param1: 1, param2: 2)`
-- 
+- ta có thể dùng `@required` để chỉ ra param là bắc buộc `void m1(@required {int param})`
 
+## Positional param
+- dùng [] để đánh dấu là optional position param
+- ex `void say(String a, [String b])` -> b là optional position param
+## giá trị mặc định
+- ta dùng `=` để gán giá trị mặc định cho param, kg gán => `null`
+
+## main([List<String> args])
+- đây là entry point của app
+
+## function as first-class object
+- có thể dùng function làm param khi gọi hàm
+
+## anonymous function
+- hàm không có tên (còn gọi lambda, closure)
+- `([[Type] param1[, ..]]) { codeblock };`
+## lexical scope
+- scope hàm được định nghĩa rõ ràng thông qua layout của code (cụ thể là theo dõi {})
+## lexical closure
+- closure là một hàm có thể truy cập đến biến trong lexical scope mặt dù hàm đó được dùng ngoài scope ban đầu (?cần tìm hiểu thêm) 
+- closure sẽ capture biến mà nằm trong scope của nó
+
+## return
+- mọi hàm đều có return, nếu không có thì mặc định là null
+
+# Operators
 
 
