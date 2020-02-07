@@ -102,8 +102,8 @@ summary: Review dart language để dùng flutter
 - parameter của function có thể là required hoặc là optional. optional thì nằm sau required, và dc xác định theo vị trí hoặc name parameter
 
 ## optional param
-- ta định nghĩa bằng cách dùng `{}`, ví dụ: `void m1({int param1, int param2})` thì ta có `m1(param1: 1, param2: 2)`
--  
+- ta định nghĩa bằng cách dùng `{}`, ví dụ: `void m1({int param1, int param2})` thì khi goị hàm `m1(param1: 1, param2: 2)`
+- 
 
 
 
