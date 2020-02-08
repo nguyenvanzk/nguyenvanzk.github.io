@@ -193,5 +193,24 @@ summary: Review dart language để dùng flutter
 - `switch case ` như C, chấp nhận string, int, compile-time constant. nếu case empty thì sẽ dc chấp nhận(nhảy tới case tiếp theo ), ngược lại thì phải dùng break. ta dùng continue case_label để nhảy tới case tương ứng 
 - `assert(conditon, message)` ngắt thực thi nếu biểu thức là false, chỉ dùng dc trong dev mode, khi production mode thì sẽ bị bỏ qua
 
- 
+# exception
 
+## throw
+- `throw exception_object`
+- ta có thể ném bất cứ thứ gì làm exception 
+- không cần khai báo `throws` cho method có exception 
+- trong production code, ta chỉ nên throw kiểu data implement `Error` và `Exception` 
+
+## catch
+- ``` 
+try {
+} on ExceptionClass catch(e) {
+}
+```
+=> ta dùng `on Exception` khi muốn chỉ định exception type cần bắt 
+=> ta dùng `catch(e)` nếu muốn tạo dối tượng e để chỉ đến exception 
+=> ta có thể dùng `catch(e, s)` để hứng, trong đó s kiểu `StackTrace`
+=> gọi `rethrow;` để propagate exception trong catch 
+
+## finally
+`try {} finally {}`
