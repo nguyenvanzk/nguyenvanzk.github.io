@@ -153,17 +153,17 @@ summary: Review dart language để dùng flutter
 -  `is` kiểm tra nếu kiểu dữ liệu 
 - `is!` kiểm tra không phải là kiểu dữ liệu 
 
- ## phép gán 
+## phép gán 
  - =: gán như bình thường
  - ??=  b ??= value ta chỉ gán nếu b là null 
  - các phép kết hợp: -= /= %= >>% ^= += *= ~/= <<= &= |=
 
- ## phép logic
+## phép logic
  - !expr phủ định biểu thức
  - || logical OR
  - && logical AND
 
- ## Bit
+## Bit
  - &
  - |
  - ^ xor
@@ -171,14 +171,14 @@ summary: Review dart language để dùng flutter
  - <<
  - >>
   
- ## biểu thức điều kiện
+## biểu thức điều kiện
  - condition ? expr1 : expr2 
  - expr1 ?? expr2 nếu expr1 != null trả về expr1, ngược lại trả về expr2 
 
- ## cascade notation
+## cascade notation
  - .. cho phep gọi chuỗi các hàm, property trên đối tượng mẹ 
 
- # lệnh điều khiển 
+# lệnh điều khiển 
  * Biểu thức điều kiện phải là boolean, không chấp nhận null hay 1 như C 
 
  - `if (expr) {
