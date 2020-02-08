@@ -139,6 +139,7 @@ summary: Review dart language để dùng flutter
 - % mod
 - a++, ++a 
 - a--, --a
+
 ## so sánh
 - == so sánh tương đương, nếu 2 phần tử đều null thì trả về true, false nếu một trong hai phần tử là null. Nhưng  ta dùng hàm identical để kiểm tra 2 đối tượng là một
 - != 
@@ -174,4 +175,23 @@ summary: Review dart language để dùng flutter
  - condition ? expr1 : expr2 
  - expr1 ?? expr2 nếu expr1 != null trả về expr1, ngược lại trả về expr2 
 
+ ## cascade notation
+ - .. cho phep gọi chuỗi các hàm, property trên đối tượng mẹ 
+
+ # lệnh điều khiển 
+ * Biểu thức điều kiện phải là boolean, không chấp nhận null hay 1 như C 
+
+ - `if (expr) {
+ } else if {
+ } else {}`
+- `for(var i =0; i < 5; i++){}`
+- `for(var x in collection){}`
+- `while(expr){}`
+- `do {} while(expr)`
+- break, continue
+- forEach cho iterable như list, set 
+- `switch case ` như C, chấp nhận string, int, compile-time constant. nếu case empty thì sẽ dc chấp nhận(nhảy tới case tiếp theo ), ngược lại thì phải dùng break. ta dùng continue case_label để nhảy tới case tương ứng 
+- `assert(conditon, message)` ngắt thực thi nếu biểu thức là false, chỉ dùng dc trong dev mode, khi production mode thì sẽ bị bỏ qua
+
+ 
 
