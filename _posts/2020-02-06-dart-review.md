@@ -130,5 +130,48 @@ summary: Review dart language để dùng flutter
 - mọi hàm đều có return, nếu không có thì mặc định là null
 
 # Operators
+## tính toán 
+- +
+- - 
+- * 
+- /
+- ~/ phép chia chỉ lấy phần nguyên 
+- % mod
+- a++, ++a 
+- a--, --a
+## so sánh
+- == so sánh tương đương, nếu 2 phần tử đều null thì trả về true, false nếu một trong hai phần tử là null. Nhưng  ta dùng hàm identical để kiểm tra 2 đối tượng là một
+- != 
+- >
+- < 
+- >=
+- <=
+
+## test kiểu 
+- `as` ép kiểu , chú ý nếu ép về kiểu không đúng, hoặc gọi trên null object thì sẽ trả về exception
+-  `is` kiểm tra nếu kiểu dữ liệu 
+- `is!` kiểm tra không phải là kiểu dữ liệu 
+
+ ## phép gán 
+ - =: gán như bình thường
+ - ??=  b ??= value ta chỉ gán nếu b là null 
+ - các phép kết hợp: -= /= %= >>% ^= += *= ~/= <<= &= |=
+
+ ## phép logic
+ - !expr phủ định biểu thức
+ - || logical OR
+ - && logical AND
+
+ ## Bit
+ - &
+ - |
+ - ^ xor
+ - ~expr
+ - <<
+ - >>
+  
+ ## biểu thức điều kiện
+ - condition ? expr1 : expr2 
+ - expr1 ?? expr2 nếu expr1 != null trả về expr1, ngược lại trả về expr2 
 
 
