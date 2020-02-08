@@ -202,15 +202,18 @@ summary: Review dart language để dùng flutter
 - trong production code, ta chỉ nên throw kiểu data implement `Error` và `Exception` 
 
 ## catch
-- ``` 
+- ```dart
 try {
 } on ExceptionClass catch(e) {
 }
 ```
-=> ta dùng `on Exception` khi muốn chỉ định exception type cần bắt 
-=> ta dùng `catch(e)` nếu muốn tạo dối tượng e để chỉ đến exception 
-=> ta có thể dùng `catch(e, s)` để hứng, trong đó s kiểu `StackTrace`
-=> gọi `rethrow;` để propagate exception trong catch 
+- ta dùng `on Exception` khi muốn chỉ định exception type cần bắt 
+- ta dùng `catch(e)` nếu muốn tạo dối tượng e để chỉ đến exception 
+- ta có thể dùng `catch(e, s)` để hứng, trong đó s kiểu `StackTrace`
+- gọi `rethrow;` để propagate exception trong catch 
 
 ## finally
-`try {} finally {}`
+- `try {} finally {}`
+
+# class
+
