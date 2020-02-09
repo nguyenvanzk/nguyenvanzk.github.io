@@ -216,4 +216,32 @@ try {
 - `try {} finally {}`
 
 # class
+## constructor
+- ta khởi tạo object bằng `ClasName` hoặc `ClassName.indentifier` 
+- `new` là optional keyword 
+- để tạo compile time constant ta đặt `const` trước constructor name 
+- ta có thể bỏ hết const keyword đầu constructor, chi cần khai báo const là tạo dc constant. `const a = [1, 2, 3]` đây là constant 
+- dùng `runtimeType` để trả về thông tin kiểu của object (1 đối tượng kiểu Type) 
+
+### constructor bình thường 
+- đặt tên trùng với tên class
+- cú pháp  nhanh khởi tạo cho biến trước khi thực thi constructor body 
+```
+ ClassName(this.var1, this.var);
+```
+### default constructor
+- nếu không khai báo constructor cho lớp thì nó sẽ láy constructor mặc định(không param, không name)
+
+### named constructor 
+```
+ClassName.identifer(param1, param2) {
+}
+```
+- constructor không dc thừa kế, bởi vậy muốn gọi named constructor ở subclass thì phải định nghĩa o  
+
+## instance variable 
+- nếu không khởi gán thì có giá trị là null
+- mối variable đều ngầm có 1 getter, nếu không phải final thì có thêm setter
+- khời gán giá trị biến instance sẽ dc thực thi trước consturctor và initializer list 
+ 
 
