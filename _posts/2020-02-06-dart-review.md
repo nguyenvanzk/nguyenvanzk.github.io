@@ -225,23 +225,105 @@ try {
 
 ### constructor bình thường 
 - đặt tên trùng với tên class
-- cú pháp  nhanh khởi tạo cho biến trước khi thực thi constructor body 
+-cú pháp nhanh khởi gán cho biến trước khi thực thi constructor body 
 ```
  ClassName(this.var1, this.var);
 ```
 ### default constructor
-- nếu không khai báo constructor cho lớp thì nó sẽ láy constructor mặc định(không param, không name)
+- nếu không khai báo constructor cho lớp thì nó sẽ lấy constructor mặc định(không param, không name)
 
 ### named constructor 
 ```
 ClassName.identifer(param1, param2) {
 }
 ```
-- constructor không dc thừa kế, bởi vậy muốn gọi named constructor ở subclass thì phải định nghĩa o  
+- constructor không dc thừa kế, bởi vậy muốn gọi named constructor ở subclass thì phải định nghĩa ở subclass
+
+### gọi non-default constructor của superclass
+- một constructor ở subclass sẽ gọi hàm default constructor của superclass, thứ tự gọi 
+    - initializer list
+    - no-arg constructor của superclass
+    - no-arg constructor của main class
+- nếu ta muốn gọi non-default constructor ta dùng cú pháp
+``` ClassName.identifer(type param1): super.identifer(param1) {}```
+
+## initializer list 
+```
+ClassName.identifer(type data): var1 = value1, var2 = value2{}
+```
+- được gán trước khi chạy constructor body
+
+## interface 
+- Mỗi class đều implement ngầm định 1 interface 
+- không có định nghĩa interface với dart 
+- dùng class với implements thì sẽ thành implements interface 
+
+## extends 
+- dùng `extends` để subclass
+- dùng super để tham chiếu đến superclass
+
+## override
+- ta dùng `@override` để override 1 method, getter, setter 
+
+## override toán tử 
+```
+Type operator +(Type data) { return [variable of Type]; }
+```
+- chú ý, override == thì phải override luôn hàm `hashCode`
+
+## noSuchMethod()
+- khi gọi trên kiểu dynamic sẽ có thể bị not found method 
+- hàm chưa dc implement (?)
+- khi xảy ra sự kiện no such method thì sẽ gọi hàm này để xử lý, ta có thể override lại để tự xử lý
+
+## extension method 
+- ta có thể viết thêm hàm vào class có sẵn (như swift) 
+
+## abstract class
+- class không cho phép khởi tạo đối tượng 
+- ta có thể dùng nó để khai báo interface
+```
+abstract class ClassName {
+abstract void method1();
+}
+```
 
 ## instance variable 
 - nếu không khởi gán thì có giá trị là null
 - mối variable đều ngầm có 1 getter, nếu không phải final thì có thêm setter
-- khời gán giá trị biến instance sẽ dc thực thi trước consturctor và initializer list 
+- khời gán giá trị biến instance sẽ dc thực thi trước constructor và initializer list 
  
+## Methods
+### instance method 
+- truy cập instance variable và this 
+
+### Getter, setter
+```
+num x;
+num get x => 1;
+set x(num value) => x = x + 1;
+```
+
+### abstract method 
+- chỉ có thể nằm trong abstract class 
+- `void method1();`  -> không có body 
+
+### biến và hàm của class 
+- dùng từ khóa static trước khai báo 
+- không được phép truy cập biến instance và this 
+- ta dùng để khai báo constant của class
+
+## mixins
+- vì chỉ dc extends 1 superclass, nếu ta muốn dùng method của class khác thì ta dùng mixins 
+```
+class A extends B with C {
+}
+```
+-> dùng with để sử dụng mixins 
+
+- khai báo 
+```
+mixin A on B {}
+```
+-> dùng on để ràng buộc chỉ dùng mixin A trên type B
 
