@@ -364,6 +364,18 @@ có support generic method
 - Flutter không hỗ trợ 
 
 # Async 
+- các operation tốn thời gian thực thi
+- async và await 
+- hoặc dùng future api
+- trả về stream 
+- để khai báo hàm async thì ta đặt async ở cuối method signature trước {} hoặc =>
+- để gọi hàm async thì ta đặt await trước gọi hàm, và await phải nằm trong hàm async
+- ta cũng áp dụng cách gọi async, await cho try, catch fianlly 
+- có thể dùng nhiều hàm await trong hàm
+- để xử lý data từ 1 stream ta dùng `await for` hoặc stream api 
+- ta không nên dùng `await for` với listener UI, vì nó tạo stream kg bao giờ đóng 
+- để thoát khỏi nghe stream ta dùng break, return 
+
 # Generator 
 - sync generator trả về 1 iterable, async generator thì trả về 1 Stream
 - sync generator: dùng `sync*` and `yield`
