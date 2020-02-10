@@ -351,6 +351,7 @@ có support generic method
 - import và library directive 
 - mỗi dart app là 1 library (không cần directive library)
 - indentifier bắt đầu bởi _ chỉ thấy bên trong library 
+
 ## import 
 - nếu là dart built-in thì `import 'dart:library_name'`
 - nếu là package bên thứ 3 thì `import 'package:uri_package'`
@@ -361,3 +362,40 @@ có support generic method
 
 # lazy load library
 - Flutter không hỗ trợ 
+
+# Async 
+# Generator 
+- sync generator trả về 1 iterable, async generator thì trả về 1 Stream
+- sync generator: dùng `sync*` and `yield`
+```dart 
+Iterable<Type> method(params) sync* {
+yield value;
+}```
+
+- async generator: dùng `async*` and `yield`
+```dart
+Stream<Type> method(params) async* {}
+```
+- Nếu đệ quy thì ta dùng yield*
+
+# callable classes 
+- cho phép gọi đối tượng như gọi hàm 
+- ta định nghĩa 1 hàm `call(params)=>value;` trong class A 
+- khi đó ta có `A()('abc')`
+
+# isolates
+- dart code thực thi bên trong có isolates, mỗi isolates có memory heap riêng và độc lập với nhau
+
+#typedef 
+- dùng typedef để đặt alias cho method `typedef Type = returnType method_signature(params);`
+- có thể dùng typedef với generic
+- typedef sẽ mang thông tin hàm, giúp check type dễ dàng
+
+# metadata
+- dùng `@` cộng với compile-time constant hoặc const constructor 
+- ta dùng reflection api để làm việc với meta data 
+
+# comment 
+- // single line comment 
+- /* */ multiline comment
+- /// hoặc /** là document comment 
