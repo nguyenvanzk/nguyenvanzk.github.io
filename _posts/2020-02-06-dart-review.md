@@ -347,5 +347,17 @@ class A<T extends BaseClass> {
 ## generic method
 có support generic method
 
-
 # thư viện và khả thi(avaibility)
+- import và library directive 
+- mỗi dart app là 1 library (không cần directive library)
+- indentifier bắt đầu bởi _ chỉ thấy bên trong library 
+## import 
+- nếu là dart built-in thì `import 'dart:library_name'`
+- nếu là package bên thứ 3 thì `import 'package:uri_package'`
+- nếu 2 package có conflict thì ta dùng `as` đặt tên cho import package: `import 'package:pkg' as lib1;`
+- import 1 phần của libry dùng show/hide:
+`import 'pkg' show a`
+`import 'pkg' hide b`
+
+# lazy load library
+- Flutter không hỗ trợ 
