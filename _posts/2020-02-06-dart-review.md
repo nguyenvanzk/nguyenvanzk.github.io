@@ -398,7 +398,7 @@ Stream<Type> method(params) async* {}
 # isolates
 - dart code thực thi bên trong có isolates, mỗi isolates có memory heap riêng và độc lập với nhau
 
-#typedef 
+# typedef 
 - dùng typedef để đặt alias cho method `typedef Type = returnType method_signature(params);`
 - có thể dùng typedef với generic
 - typedef sẽ mang thông tin hàm, giúp check type dễ dàng
