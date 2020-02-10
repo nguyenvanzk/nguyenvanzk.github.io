@@ -225,14 +225,14 @@ try {
 
 ### constructor bình thường 
 - đặt tên trùng với tên class
--cú pháp nhanh khởi gán cho biến trước khi thực thi constructor body 
+- cú pháp nhanh khởi gán cho biến trước khi thực thi constructor body 
 ```
  ClassName(this.var1, this.var);
 ```
-### default constructor
+###default constructor
 - nếu không khai báo constructor cho lớp thì nó sẽ lấy constructor mặc định(không param, không name)
 
-### named constructor 
+###named constructor 
 ```
 ClassName.identifer(param1, param2) {
 }
