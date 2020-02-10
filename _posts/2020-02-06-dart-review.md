@@ -229,10 +229,10 @@ try {
 ```
  ClassName(this.var1, this.var);
 ```
-###default constructor
+### default constructor
 - nếu không khai báo constructor cho lớp thì nó sẽ lấy constructor mặc định(không param, không name)
 
-###named constructor 
+### named constructor 
 ```
 ClassName.identifer(param1, param2) {
 }
