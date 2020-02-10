@@ -406,6 +406,7 @@ Stream<Type> method(params) async* {}
 # metadata
 - dùng `@` cộng với compile-time constant hoặc const constructor 
 - ta dùng reflection api để làm việc với meta data 
+- ví dụ của metadata @override, @deprecated,...
 
 # comment 
 - // single line comment 
