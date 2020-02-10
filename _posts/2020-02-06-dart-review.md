@@ -341,8 +341,8 @@ mixin A on B {}
 class A<T extends BaseClass> {
 }
 ```
--> với T là generic type 
--> BaseClass ràng buộc chỉ được dùng BaseClass cho T 
+- với T là generic type 
+- BaseClass ràng buộc chỉ được dùng BaseClass cho T 
 
 ## generic method
 có support generic method
