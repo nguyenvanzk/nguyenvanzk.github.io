@@ -327,3 +327,25 @@ mixin A on B {}
 ```
 -> dùng on để ràng buộc chỉ dùng mixin A trên type B
 
+# Generic 
+- chỉ định kiểu với generic sẽ tạo ra code tốt hơn
+- giảm trùng lặp code 
+
+## cách dùng 
+- collection: `GenericType<ConcreteType> a;`
+- collection literal init: `var a = <ConcreteType>(literal_init)`
+- ta có thể kiểm tra thông tin lớp của generic với concrete type (không giống java, java chỉ kiểm tra dc là list hay array, kg kiểm tra dc kiểu cụ thể )
+
+## khai báo 
+```dart 
+class A<T extends BaseClass> {
+}
+```
+-> với T là generic type 
+-> BaseClass ràng buộc chỉ được dùng BaseClass cho T 
+
+## generic method
+có support generic method
+
+
+# thư viện và khả thi(avaibility)
