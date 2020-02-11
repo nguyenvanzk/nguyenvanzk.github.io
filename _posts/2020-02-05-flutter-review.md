@@ -3,6 +3,55 @@ layout: post
 title: flutter review
 date: 2020-02-05 11:47 +0700
 ---
+{% include toc.html %}
 
-# Ide
-## VS Code
+# Widget
+- stateless widget chỉ phụ thuộc vào config của chính nó 
+- stateful widget maintain thuộc tính linh hoạt và tương tác với `State` object. mọi thay đổi của stateful widget đều thông qua `State` object
+- cách implement stateful widget
+```dart
+class A extends StatefulWidget {
+// hàm createState() => State();
+}
+```
+implement state 
+```dart
+class AState extends State<A> {
+// hàm Widget build()
+}
+```
+- hàm `initState()` sẽ được gọi khi state dc init, ta override hàm này để init data.
+
+# Basic widget 
+- Nhấn Option+Enter trong Android Studio để wrap widget vào 1 widget khác
+
+## ListView 
+- hoạt động như UITableView của iOS
+- return `Divider` để tạo line phân cách giữa các cell 
+- để tạo padding ta dùng `Padding` trong hàm build row
+- dùng widget `CircleAvatar` để render hình bo tròn 
+- widget `NetworkImage` để load image 
+
+## Text
+- tạo styled text 
+
+## Row, Column
+- tạo flexible layout theo chiều ngang (row) và chiều dọc (column)
+- theo nguyên lí flexbox của web 
+
+## Stack 
+- dựa theo absolute position của web 
+- dùng kết hợp với `Positioned` widget để canh vị trí cho widget con 
+- cac widget con xếp chồng lên nhau 
+
+## Container 
+- tạo vùng chứa dạng chữ nhật
+- dùng kết hợp `BoxDecoration` để trang trí background, border, đổ bóng 
+
+## Button
+- IconButton dùng icon làm button 
+- RaisedButton nút hình chữ nhật có text 
+- FloatingActionButton: nút luôn nổi, để cung cấp nhanh action menu 
+
+## Material widgets
+- khuyến khích dùng 
