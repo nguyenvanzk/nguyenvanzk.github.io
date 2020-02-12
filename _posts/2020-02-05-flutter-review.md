@@ -55,3 +55,12 @@ class AState extends State<A> {
 
 ## Material widgets
 - khuyến khích dùng 
+
+### Theme.of(context).textTheme.identifer
+- lấy text style theo định nghĩa hệ thống 
+
+### SizedBox
+- tạo 1 vùng không gian hình chữ nhật có xác định width, height (hay dùng với textfield vì nó cần limit width)
+### Spacer
+- tạo khoảng trống, dùng với Row, Column, SizedBox 
+### 
