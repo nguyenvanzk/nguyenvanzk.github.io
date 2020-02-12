@@ -63,4 +63,8 @@ class AState extends State<A> {
 - tạo 1 vùng không gian hình chữ nhật có xác định width, height (hay dùng với textfield vì nó cần limit width)
 ### Spacer
 - tạo khoảng trống, dùng với Row, Column, SizedBox 
-### 
+### thuộc tính mainAxisAlignment 
+- sẽ bố trí widget theo trục chính: Row: trục ngang, Column: trục đứng 
+### thuộc tính crossAxisAlignment
+- Bố trí widget theo trục còn lại của hệ tọa độ decarter: Row: trục đứng, Column: trục ngang 
+
