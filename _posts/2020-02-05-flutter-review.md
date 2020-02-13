@@ -67,4 +67,13 @@ class AState extends State<A> {
 - sẽ bố trí widget theo trục chính: Row: trục ngang, Column: trục đứng 
 ### thuộc tính crossAxisAlignment
 - Bố trí widget theo trục còn lại của hệ tọa độ decarter: Row: trục đứng, Column: trục ngang 
-
+# package
+## tạo package
+- tại root, tạo file pubsec.yaml và folder lib, lib/src(private với bên ngoài thư viện)
+- trong lib, tạo file filename.dart, nội dung
+```dart
+library lib_name;
+export 'path_to_src_files';
+```
+## import package
+-`import 'package:package_path'`
