@@ -77,3 +77,23 @@ export 'path_to_src_files';
 ```
 ## import package
 -`import 'package:package_path'`
+
+
+# MobX
+- khai báo store để chứa các field cần theo dõi thay đổi 
+```
+class A extends _A with _$A {
+}
+
+abstract class _A with Store {
+// define @observable, @computed, @action 
+}
+```
+- chạy codegen để tạo ra code 
+    - xóa cache & conflict
+    `flutter packages pub run build_runner build --delete-conflicting-outputs`
+    - tự động track thay đổi để generate changes 
+    `flutter packages pub run build_runner watch`
+
+- mọi thay đổi state thì đều phải thông qua hàm dc đánh dấu @action
+## mobx - tips 
