@@ -215,6 +215,11 @@ try {
 ## finally
 - `try {} finally {}`
 
+# enum
+- ```
+enum Name { enum1, enum2,.. }
+```
+
 # class
 ## constructor
 - ta khởi tạo object bằng `ClasName` hoặc `ClassName.indentifier` 
