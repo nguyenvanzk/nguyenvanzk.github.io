@@ -77,12 +77,12 @@ summary: review layout cho flutter
 - dễ dùng hơn `Row`
 
 # Render box
-- constraint: minimum và maximum width và height.
+- constraint: minimum và maximum của width và height.
 - size: width và height cụ thể
 - có 3 loại: 
-+ càng to càng tốt (trường hợp dùng cho Center, ListView))
-+ cùng cỡ với widget con (vd: t/h Transform,  Opacity)
-+ có kích cỡ xác định 
+  + càng to càng tốt (trường hợp dùng cho Center, ListView))
+  + cùng cỡ với widget con (vd: t/h Transform,  Opacity)
+  + có kích cỡ xác định 
 - `Container` default là big, nhưng nếu truyền vào construct với width thì lại thành cỡ xác định
 - Một số constraint thì "tight", nghĩa là không cho render box quyết định size. các boxes layout, nhất là single-child sẽ truyền constraint của nó cho con. 
 - một số boxes sẽ bị mất contraints: minimum bị gỡ, maximum vẫn giữ (như `Center`)
