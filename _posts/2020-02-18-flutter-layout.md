@@ -41,12 +41,40 @@ summary: review layout cho flutter
 - ta thường lồng rows và columns  
 
 # một số widget thường dùng 
-### container 
-### gridview 
-### listview 
-### stack 
-### card
-### ListTile 
+## container 
+- thêm padding, margin, borders
+- thay đổi background color hoặc image (với decoration, thường dùng BoxDecoration) 
+- có thể dùng thêm border hoặc bo góc, margins cho image 
+- loại single-child widget 
+
+## gridview 
+- dùng để layout dạng lưới 2 chiều 
+- khi nào nội dung trong column vượt render box thì thêm scroll 
+- có 2 cách dùng GridView 
+  - GridView.count: xác định số cột
+  - GridView.extend: xác định chiều ngang tố đa của 1 tile 
+- ta dùng `Table` và `DataTable` thay cho `gridview` nếu cần chính xác 1 cell sẽ chiếm bao nhiêu row và column 
+
+## listview 
+- tổ chức layout dạng column, để chứa 1 list các item, item này layout dạng box (table trong iOS)
+- dùng ListTile để định nghĩa 1 cell 
+
+## stack 
+- dạng layout đặt widget này trên widget khác
+- không thể scroll
+- widget đầu tiên sẽ được làm chuẩn, các widget sau sẽ đặt trên widget chuẩn
+- có thể xén phần dư thừa vượt qua render box
+
+## card
+- dùng để hỗ trợ thông tin đính kèm
+- single-child widget 
+- không thể scroll
+- hiển thị với bo góc và đổ bóng 
+- từ thư viện material 
+
+## ListTile 
+- là một row đặt biệt, có thể chứa 1 icon và 3 dòng text
+- dễ dùng hơn `Row`
 
 
 
