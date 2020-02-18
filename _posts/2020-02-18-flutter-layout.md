@@ -34,6 +34,7 @@ summary: review layout cho flutter
 - ví dụ: spaceEvenly: sẽ tạo khoảng trống bằng nhau (evenly) và trước và sau widget đầu tiền và cuối cùng (theo mainAxisAligment) 
   + spaceAround: tạo khoảng trống bằng nhau giữa các widget + 1/2 khoảng trống cho widget đầu tiên và cuối cùng
   + spaceBetween: tạo khoảng trống bằng nhau giữa các widget 
+- `Flexible` và `Expanded` đều cho phép fill hết space của Flex (Row, Column), Expanded làm cho các widget con fill hết, Flexible thì không bắt buộc con fill hết 
 
 ## widget định cỡ (Sizing widget)
 - khi một phần vượt quá kích thước visible, thì sẽ bị flutter tô sọc vàng + đen
