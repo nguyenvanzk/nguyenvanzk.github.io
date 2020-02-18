@@ -40,7 +40,7 @@ summary: review layout cho flutter
 - dùng `mainAxisSize = MainAxisSize.min` để các widget đặt gần nhau nhất
 - ta thường lồng rows và columns  
 
-## một số widget thường dùng 
+# một số widget thường dùng 
 ### container 
 ### gridview 
 ### listview 
