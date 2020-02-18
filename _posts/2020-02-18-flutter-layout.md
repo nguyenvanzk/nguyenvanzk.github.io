@@ -76,6 +76,30 @@ summary: review layout cho flutter
 - là một row đặt biệt, có thể chứa 1 icon và 3 dòng text
 - dễ dùng hơn `Row`
 
+# Render box
+- constraint: minimum và maximum width và height.
+- size: width và height cụ thể
+- có 3 loại: 
++ càng to càng tốt (trường hợp dùng cho Center, ListView))
++ cùng cỡ với widget con (vd: t/h Transform,  Opacity)
++ có kích cỡ xác định 
+- `Container` default là big, nhưng nếu truyền vào construct với width thì lại thành cỡ xác định
+- Một số constraint thì "tight", nghĩa là không cho render box quyết định size. các boxes layout, nhất là single-child sẽ truyền constraint của nó cho con. 
+- một số boxes sẽ bị mất contraints: minimum bị gỡ, maximum vẫn giữ (như `Center`)
+
+## Unbounded constraints
+- trong 1 số case, thì constraint đối với 1 box là unbounded, hoặc infinite nghĩa là max width hoặc max height là `double.INFINITY`
+- box càng to càng tốt, nếu unbounded constraint thì bị exception
+- tình huống này thường là do box nằm trong flexbox (Row, Column), hoặc scrollable (ListView, ScrollView)
+- Listview cố gắng chiếm hết space theo cả 2 chiều.
+
+## Flex
+- Flex box sẽ thay đổi hành vi phụ thuộc vào bounded hay unbounded constraint
+- trong bounded constraint, thì nó sẽ càng to càng tốt
+- trong unbounded constraint, thì box sẽ cố phình con theo hướng unbounded, flex luôn bằng 0. => không thể used Expanded khi flex box nằm trong 1 flex box hoặc scrollable. 
+- với cross direction, không dc unbounde, vì không thể sắp xếp dc widget con.
+
+
 
 
 
