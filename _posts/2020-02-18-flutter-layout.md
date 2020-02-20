@@ -102,6 +102,12 @@ summary: review layout cho flutter
 - trong unbounded constraint, thì box sẽ cố phình con theo hướng unbounded, flex luôn bằng 0. => không thể used Expanded khi flex box nằm trong 1 flex box hoặc scrollable. 
 - với cross direction, không dc unbounde, vì không thể sắp xếp dc widget con.
 
+# Responsive layout 
+responsive design là dùng tập hợp code để phản hồi lại thay đổi của layout. Khi có thay đổi, sẽ dùng constraints để resize components.
+## Quản lý thay đổi bàn phím
+## Quản lý thay đổi chiều xoay thiết bị
+## resize text cho vừa parent widget 
+## truyền contraint cho widget con 
 
 
 
