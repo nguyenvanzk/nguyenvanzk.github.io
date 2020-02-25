@@ -97,3 +97,20 @@ abstract class _A with Store {
 
 - mọi thay đổi state thì đều phải thông qua hàm dc đánh dấu @action
 ## mobx - tips 
+
+# navigation 
+- ta dùng Material design thì khi thực hiện navigation sẽ dùng `MaterialPageRoute`
+- đẩy vào stack dùng push, đẩy ra dùng pop
+## custom route
+- ta có thể dùng `MaterialPageRoute` để custom route 
+- để trả về kết quả khi pop ta dùng `MaterialPageRoute<T>`, và push, pop là async nên ta phải dùng await để chờ kết quả trả về. ta trả kết quả trả về  bằng cách gọi `Navigator.pop(context, <kết_quả kiểu T>)`
+- cơ chế tạo route của navigator
+ví dụ `/home` vì có `/` nên sẽ tạo ra route `/` và `/home`, nếu không có định nghĩa thì navigator sẽ set thành null. vd: kg định nghĩa route `/` thì chỉ còn `/home`
+
+## custom transition
+- để custom ta có thể dùng `PageRouteBuilder`
+
+## WillPopScope
+- ta dùng để điều khiển việc pop widget ra khỏi stack render 
+- không nên đặt trong material app, vì sẽ không dc gọi callback 
+
