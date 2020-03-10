@@ -97,6 +97,7 @@ abstract class _A with Store {
 
 - mọi thay đổi state thì đều phải thông qua hàm dc đánh dấu @action
 ## mobx - tips 
+- @observable 
 
 # navigation 
 - ta dùng Material design thì khi thực hiện navigation sẽ dùng `MaterialPageRoute`
@@ -112,5 +113,9 @@ ví dụ `/home` vì có `/` nên sẽ tạo ra route `/` và `/home`, nếu kh�
 
 ## WillPopScope
 - ta dùng để điều khiển việc pop widget ra khỏi stack render 
-- không nên đặt trong material app, vì sẽ không dc gọi callback 
+- không nên đặt trong material app, vì sẽ không dc gọi callback, nên đặt trong scaffold
 
+# format textfield voi TextInputFormatter
+- dùng để format ngày tháng, credit card khi gõ trong textfield 
+- truyền vào 1 array các textinputformatter để định dạng tự động 
+- để custom format, ta cần kế thừa `TextInputFormatter` và implement `formatEditUpdate`
