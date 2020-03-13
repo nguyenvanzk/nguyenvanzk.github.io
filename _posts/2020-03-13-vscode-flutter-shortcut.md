@@ -21,4 +21,5 @@ summary:
 - `statelessW` tạo stateless widget
 
 # Chung
-- fn + shift + f6: change symbol name 
+- fn + shift + f6: thay đổi symbol name 
+- fn + f5: run debug 
