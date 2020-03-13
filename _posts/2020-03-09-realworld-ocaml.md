@@ -56,7 +56,10 @@ import các method, type của module
 
 # lỗi
 - compile-time error, lỗi lúc biên dịch code 
-- runtime error, lỗi lúc thực thi mới xảy rar
+- runtime error, lỗi lúc thực thi mới xảy ra
+
+# comment
+đặt comment trong `(**)`
 
 # tuples
 - cú pháp `(var_1, var_2)`, các var_1, var_2 có kiểu khác nhau
@@ -74,7 +77,38 @@ import các method, type của module
 - List.length: lấy chiều dài của list 
 - `List.map list ~f:method` duyệt qua list, áp dụng hàm lên list để biến đổi, sau đó tạo ra list mới với các biến đổi
 - khởi tạo, dùng `::` để nối các phần tử tạo list, thứ tự là left -> right. eg `"French"::Vietnam":: languages`
-## list matching 
+## list matching
+- ta có thể dùng pattern matching để phân lập list thành dạng `phần_tử_đầu_tiên :: phần_list_còn_lại`, nhưng cách này sẽ bỏ qua empty list `[]`
+- ta dùng `match` để pattern matching, cú pháp
+```ocaml
+let match list_of_items with 
+| [] -> expr
+| first_item:: rest_of_list -> expr 
+```
+- thông thường, ta đặt tên first_item là `hd`(head), phần còn lại của list là `tl`(tail)
+
+## đệ quy list
+- định nghĩa: ta phân lập thành các case cơ bản (base case) có thể giải quyết, và phần còn lại (inductive case) sẽ được gọi đệ quy về case cơ bản
+- đặt `rec` trước tên hàm
+- vd:
+```ocaml
+let rec a = match list with
+| [] -> expr
+| [hd] -> expr
+| hd :: hd2 :: tl -> expr
+```
+- trong thực tế, ta dùng hàm iterator trong List module, ít dùng đệ quy 
+
+## lồng các `let` với `let` và `in`
+- ta dùng kết hợp `let` và `in` để định nghĩa biến trong scope
+- `in` bắt đầu 1 scope
+- ví dụ:
+```ocaml  
+let a = 7 in 
+let b = a * a in
+x + y
+```
+- trong thực tế, cách dùng này để build expr phức tạp
 
 # options
 
