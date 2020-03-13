@@ -49,11 +49,12 @@ import các method, type của module
 - là khả năng phát hiện kiểu dữ liệu của biểu thức từ các biến 
 - ta có thể thêm annotation để giúp quá trình inference đễ hơn, code dễ đọc hơn 
 `biến: kiểu` hoặc hàm `tên_hàm : inputtype1 -> inputtype2 -> returnType` 
+
 ## inference generic type
 - một số biểu thức, ocaml kg đủ dữ kiện để xác định kiểu, thì biểu thức đó sẽ làm việc dc với mọi kiểu dữ liệu (generic)
 - để biểu diễn generic type ta dùng `type variable 'a` 
 
-# lỗi 
+# lỗi
 - compile-time error, lỗi lúc biên dịch code 
 - runtime error, lỗi lúc thực thi mới xảy rar
 
@@ -63,7 +64,7 @@ import các method, type của module
 - dùng pattern matching để extract biến, eg `let (x, y) = a_tuple`
 - dùng `,` để phân cách các item của tuple. Ta có thể không cần () để khởi tạo tuple 
 
-# list 
+# list
 - cho phép lưu trữ 1 danh sách các item có cùng list
 - biểu diễn `[val1; val2; val3]`
 - dùng `;` để phân cách các item của list
