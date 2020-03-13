@@ -7,6 +7,7 @@ author:
 tags: []
 summary: 
 ---
+> take note về ocaml từ sách realworld ocaml online
 
 {% include toc.html %}
 
