@@ -106,13 +106,38 @@ let rec a = match list with
 ```ocaml  
 let a = 7 in 
 let b = a * a in
-x + y
+a + b
 ```
 - trong thực tế, cách dùng này để build expr phức tạp
+- có thể dùng let để thực thi 1 i/o trong 1 scope, eg: `let open Float.o in expr`
 
 # options
+- kiểu dữ liệu biểu diễn biến có chứa giá trị bên trong(`Some(x)`) hoặc kg (`None`)
+- Some và None là 2 constructor để tạo Option
+- dùng pattern matching để lấy value từ 1 Option
 
-# pattern matching 
+# Records và Variants
+- tương tự struct trong C 
+- ta định nghĩa record type như sau
+```ocaml
+type record_name = {var1: type1; var2: type2}
+```
+- constructor cho record type `let a = {var1: value1; var2: value2}`, ta không dùng record_name
+- khi muốn định nghĩa kiểu mới từ các record type, ta dùng variant type
+```ocaml 
+type record_name = 
+| Variant1 of type1 
+| Variant2 of type2 
+```
+các variant1, variant2 phải dc capitalized 
+
+- dùng pattern matching với variant
+```ocaml 
+let a = match a with 
+|Variant1 -> expr1
+|Variant2 -> expr2 
+```
+- list, tupes là loại variant dc định nghĩa sẵn
 
 
 
