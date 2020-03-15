@@ -123,7 +123,7 @@ a + b
 type record_name = {var1: type1; var2: type2}
 ```
 - constructor cho record type `let a = {var1: value1; var2: value2}`, ta không dùng record_name
-- khi muốn định nghĩa kiểu mới từ các record type, ta dùng variant type
+- khi muốn định nghĩa kiểu mới từ các record type có thể dùng với matching pattern, ta dùng variant type
 ```ocaml 
 type record_name = 
 | Variant1 of type1 
@@ -138,6 +138,50 @@ let a = match a with
 |Variant2 -> expr2 
 ```
 - list, tupes là loại variant dc định nghĩa sẵn
+
+# lập trình imperative
+- các cấu trúc dữ liệu trong ocaml là immutable, nhưng ocaml vẫn hỗ trợ mutable với các cấu trúc dữ liệu sau
+## array 
+- giống như C, bắt đầu từ 0,  và chỉnh sửa phần tử là constant-time
+- khai báo 
+```ocaml
+let arr = [| pt1; pt2; pt3 |]
+```
+- truy cập tới phần tử thứ i: `arr.(i)`, thay đổi gía trị ta dùng operator `<-`, vd: `arr.(i) <- gia_tri` 
+
+## mutable record fields
+- ta thêm từ khóa `mutable` vào trước khai báo field
+- cú pháp
+```ocaml
+type record_type = {
+  mutable var1: type1;
+  mutable var2: type2;
+}
+```
+- ta cũng dùng toán tử `<-` để thay đổi gía trị record
+## refs
+- đây là kiểu dữ liệu có cấu trúc `{ contents = gia_tri}`
+- khởi tạo `ref gia_tri`
+- lấy giá trị `!ref_variable`
+- gán thì ta dùng `:=` tương tự như `ref_variable.contents <- gia_tri` 
+
+## vòng lặp for, while 
+### for
+- cú pháp 
+```ocaml
+for i = 0 to limit do 
+expr
+done
+```
+### while
+- cú pháp
+```ocaml
+while expr do 
+  expr
+done
+```
+- ta dùng ; để ngăn cách các câu lệnh độc lập
+
 
 
 
