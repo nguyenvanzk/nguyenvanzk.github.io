@@ -119,3 +119,12 @@ ví dụ `/home` vì có `/` nên sẽ tạo ra route `/` và `/home`, nếu kh�
 - dùng để format ngày tháng, credit card khi gõ trong textfield 
 - truyền vào 1 array các textinputformatter để định dạng tự động 
 - để custom format, ta cần kế thừa `TextInputFormatter` và implement `formatEditUpdate`
+
+# convert từ string qua ngày tháng 
+## chuẩn ISO 8601 
+- thư viện `dart:core`
+- dùng hàm parse(format)
+
+## thư viện intl 
+- `new DateFormat.yMd()`
+- `new DateFormat('yMd')`
