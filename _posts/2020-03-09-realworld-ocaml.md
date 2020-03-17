@@ -182,6 +182,35 @@ done
 ```
 - ta dùng ; để ngăn cách các câu lệnh độc lập
 
+# biến 
+- là định danh chỉ đến  một giá trị cụ thể 
+- biến phải bắt đầu bởi kí tự thường hoặc _
+```ocaml
+let <variable> = <expr>
+```
+- mỗi một binding có scope, là phần code có thể tham chiếu đến binding. 
+- dùng let binding để định nghĩa scope có giới hạn trong 1 biểu thức
+```ocaml
+let <variable> = <expr1> in <expr2>
+```
+expr2 sẽ tham chiếu đến `<variable>` dựa trên `<expr1>`, và `<variable>` sẽ không tồn tại ngoài scope là `<expr2>`
+- let binding trong inner scope có thể che đi định nghĩa cùng tên ở phía ngoài
+- ta dùng `let...in` để build các biểu thức phức tạp
+- let binding là immutable
+
+## pattern matching với let 
+* có 2 cách dùng pattern matching
+  - với record, tuple thì có thể vét cạn, còn list thì phải cẩn thận trường hợp [] 
+```ocaml
+let (a1, a2) = <var>
+```
+  - dùng `match...with`, nên dùng với list 
+
+# function 
+
+
+
+
 
 
 
