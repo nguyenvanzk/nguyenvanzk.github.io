@@ -34,17 +34,6 @@ import các method, type của module
 - dùng `let` (let binding) để gán giá trị vào biến 
 - `**` phép mũ, có phiên bản cho float `**.`
 
-# hàm
-- dùng `let` để khai báo hàm
-- ocaml xem hàm như các giá trị khác, nên gán dc bằng let
-- khai báo hàm, thì string đầu là tên hàm, các param sẽ theo sau tên hàm và cách nhau bởi space
-- ta có thể dùng Module.method để truy cập đến method trong module
-- hàm có thể nhận 1 hàm khác làm tham số, `(type1 -> returnType1) -> type2 -> returnType3`, (type1 -> returnType1) là 1 hàm. 
-- để 'mở' 1 module, ta có thể dùng `open ModuleName` hoặc `ModuleName.O.(expression dc build bằng các_method_của_module)`
-- kiểu của hàm: `type1 -> type2 -> returnType3`, eghĩa là có 2 param type1, type2, trả về kiểu returnType3 
-- dùng muĩ tên để chỉ signature của hàm
-- phần khai báo hàm và phần nội dung hàm cách nhau bởi dấu `=`
-
 # type inference
 - là khả năng phát hiện kiểu dữ liệu của biểu thức từ các biến 
 - ta có thể thêm annotation để giúp quá trình inference đễ hơn, code dễ đọc hơn 
@@ -207,6 +196,42 @@ let (a1, a2) = <var>
   - dùng `match...with`, nên dùng với list 
 
 # function 
+- có các loại function: anonymous, multiargument, recursive (đệ quy), prefix và infix operator (toán tử)
+-- hàm được xem như 1 giá trị thường, có thể truyền vào như param, return về từ hàm hoặc là lưu trữ trong cấu trúc dữ liệu 
+- khai báo hàm, thì string đầu là tên hàm, các param sẽ theo sau tên hàm và cách nhau bởi space
+- ta có thể dùng Module.method để truy cập đến method trong module
+- hàm có thể nhận 1 hàm khác làm tham số, `(type1 -> returnType1) -> type2 -> returnType3`, (type1 -> returnType1) là 1 hàm. 
+- để 'mở' 1 module, ta có thể dùng `open ModuleName` hoặc `ModuleName.O.(expression dc build bằng các_method_của_module)`
+- kiểu của hàm: `type1 -> type2 -> returnType3`, eghĩa là có 2 param type1, type2, trả về kiểu returnType3 
+- dùng muĩ tên để chỉ signature của hàm
+- phần khai báo hàm và phần nội dung hàm cách nhau bởi dấu `=`
+
+## anonymous 
+```ocaml
+(fun x y -> x + y)
+```
+
+- định nghĩa hàm với tên với cú pháp `let ten_ham x y z = x + y + z`
+## multiargument
+- ta có thể dùng curried hoặc tuples để khai báo multiargument function
+  + ` let ten_ham = (fun x -> (fun y -> x + y))`. Với cách này ta có thể gọi hàm với 1 phần tham số, sau đó lưu trữ lại và gọi bổ sung tham số cho đến hết param
+  + ` let ten_ham (x, y) = x + y`
+- ta chú ý đến curried, vì nó là kiểu default của ocaml
+
+## hàm đệ quy 
+- dùng từ khoá `rec` để đánh dấu là hàm đệ quy
+- kết hợp khai báo đệ quy bằng từ khoá `and`
+
+## các toán tử prefix và infix  
+- prefix: toán tử đứng trước các param 
+- infix: đứng giữa 2 param. vd: `3 + 4` có thể biểu diễn thành `(+) 3 4`
+- hàm được xem là toán tử (operator) nếu tên dc chọn từ tập `! $ % & * + - . / : < = > ? @ ^ | ~`, tên operator dc định nghĩa trước như: mod, lsl, phép dịch bit 
+- ta dc phép định nghĩa mới hoặc làm lại 1 operator. eg: `let (+!) (x1,y1) (x2,y2) = (x1 + x2, y1 + y2)` ~> `(3,2) +! (-2,4)`
+- chú ý với `*`, ta phải đặt `*` có khoản trắng 2 bên với `()`, vì nếu để gần, ocaml sẽ nhầm với comment. eg `let (***) x y =...`, ta có `(***)` là 1 comment !!!, phải đặt lại `( *** )`
+- toán tử negative (-) có độ ưu tiên thấp hơn function application (xem curried), nên khi truyền negative value ta phải dùng `()`. eg: `Int.max 3 -4` sẽ dc biên dịch thành `(Int.max 3) - 4`. muốn đúng ta phải `Int.max 3 (-4)` 
+- toán tử `(|>) x f = f x` là left associate, nó sẽ apply hàm `f` lên `x` 
+ 
+
 
 
 
