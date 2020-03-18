@@ -210,7 +210,6 @@ let (a1, a2) = <var>
 ```ocaml
 (fun x y -> x + y)
 ```
-
 - định nghĩa hàm với tên với cú pháp `let ten_ham x y z = x + y + z`
 ## multiargument
 - ta có thể dùng curried hoặc tuples để khai báo multiargument function
@@ -230,7 +229,52 @@ let (a1, a2) = <var>
 - chú ý với `*`, ta phải đặt `*` có khoản trắng 2 bên với `()`, vì nếu để gần, ocaml sẽ nhầm với comment. eg `let (***) x y =...`, ta có `(***)` là 1 comment !!!, phải đặt lại `( *** )`
 - toán tử negative (-) có độ ưu tiên thấp hơn function application (xem curried), nên khi truyền negative value ta phải dùng `()`. eg: `Int.max 3 -4` sẽ dc biên dịch thành `(Int.max 3) - 4`. muốn đúng ta phải `Int.max 3 (-4)` 
 - toán tử `(|>) x f = f x` là left associate, nó sẽ apply hàm `f` lên `x` 
- 
+
+## khai báo hàm với `function`
+- dùng function khai báo hàm, ta sẽ có được built-in matching pattern 
+```ocaml
+let a_function = function 
+| Some x -> x 
+| None -> 0
+```
+trên ví dụ, ta định nghĩa 1 hàm a_function có 1 param kiểu int
+- ta có thể kết hợp khai báo `function` với parameter
+
+## label argument (parameter có label)
+- ngoài việc truyền param theo vị trí, ta có thể truyền param theo label.
+- giúp code dễ đọc, giúp ta hiểu rõ param cần truyền vào theo ngữ cảnh khi có nhiều parameters 
+- giúp ta không cần quan tâm thứ tự parameter, sẽ khó nhầm lẫn giữa các parameter cùng kiểu
+```ocaml
+let ratio ~label1 ~label2 = label1 + label2 
+let result = ratio ~label1:1 ~label2:3 
+``` 
+- label punning: ta có thể bỏ qua dấu : và giá trị khi truyền vào biến cùng tên với label 
+```ocaml
+let num = 3 in
+let denom = 4 in 
+ratio ~num ~denom
+```
+### sử dụng labels khi truyền tham số hàm (higher-order function)
+- ta phải chú ý thứ tự label khi dùng higher-order function, nếu thay đổi labels sẽ bị failed khi compile (khác với khi gọi hàm bình thường là kg cần quan tâm thứ tự label)
+```ocaml
+let apply_to_tuple f (first,second) = f ~first ~second;;
+let apply_to_tuple_2 f (first,second) = f ~second ~first;;
+```
+nếu ta truyền vào 1 hàm `devide ~first ~second` thì sẽ pass `apply_to_tuple` nhưng failed với `apply_to_tuple_2` vì thứ tự label ~second ~first bị đảo ngược
+
+## optional argument 
+### basic
+- có thể truyền param hoặc bỏ qua khi gọi hàm
+- để biểu diễn argument là optional ta đặt dấu `?` trước tên argument: `let concat ?sep x y = ...` 
+- ta nên dùng pattern matching để xử lý với optional argument, có thể gán giá trị mặc định cho argument `let concat ?(sep="") x y = ...`
+- tính năng này hữu ích, nhưng không nên lạm dụng. Nó giúp ta chỉ cần quan tâm đến tham số cần truyền vào, cũng như tạo API mới mà không thay đổi code có sẵn 
+- chỉ nên dùng nếu không làm mất đi tính rõ ràng của code. Nên dùng nếu như function đó không phải là public ngoài module và không có mặt trong mli file
+
+### truyền giá trị như 1 optional argument 
+- thông thường khi không truyền param vào optinal arg, sẽ nhận giá trị None, có truyền thì là Some. và thường thì ta kg cần xác định rõ là None hay Some khi truyền vào. nhưng ocaml cho phép truyền vào None/Some bằng cách thay `~` bằng `?`. vd: `concat ?sep:(Some: ":") "foo" "bar"` 
+
+
+
 
 
 
