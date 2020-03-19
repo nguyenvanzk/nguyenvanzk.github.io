@@ -269,21 +269,16 @@ nếu ta truyền vào 1 hàm `devide ~first ~second` thì sẽ pass `apply_to_t
 - ta nên dùng pattern matching để xử lý với optional argument, có thể gán giá trị mặc định cho argument `let concat ?(sep="") x y = ...`
 - tính năng này hữu ích, nhưng không nên lạm dụng. Nó giúp ta chỉ cần quan tâm đến tham số cần truyền vào, cũng như tạo API mới mà không thay đổi code có sẵn 
 - chỉ nên dùng nếu không làm mất đi tính rõ ràng của code. Nên dùng nếu như function đó không phải là public ngoài module và không có mặt trong mli file
+- ta có thể định nghĩa giá trị mặc định cho optional argument `concat x ?(sep="") = ...`, với sep="" là default value.
 
-### truyền giá trị như 1 optional argument 
-- thông thường khi không truyền param vào optinal arg, sẽ nhận giá trị None, có truyền thì là Some. và thường thì ta kg cần xác định rõ là None hay Some khi truyền vào. nhưng ocaml cho phép truyền vào None/Some bằng cách thay `~` bằng `?`. vd: `concat ?sep:(Some: ":") "foo" "bar"` 
+### truyền giá trị cho 1 optional argument 
+- thông thường khi không truyền param vào optinal arg, sẽ nhận giá trị None, có truyền thì là Some. và thường thì ta kg cần xác định rõ là None hay Some khi truyền vào. nhưng ocaml cho phép truyền vào None/Some bằng cách thay `~` bằng `?`. vd: `concat ?sep:(Some: ":") "foo" "bar"`, sẽ tương đương với `concat ~sep:":" "foo" "bar"`
 
+### inference label và optional argument 
+- khi truyền vào 1 function như param, ta nên xác định rõ signature của function thay vì để ocaml compiler tự inference, vì nó có thể nhầm lẫn giữ label và optional argument
 
+### optional argument và partial application (curried)
+- optional argument sẽ bị loại khi truyền vào hàm tham số có vị trí đứng sau optional argument
+- nếu truyền tấp cả param vào cùng lúc, thì optional argument sẽ không bị loại (earased - xoá)
 
-
-
-
-
-
-
-
-
-
-
-
-
+# List 
