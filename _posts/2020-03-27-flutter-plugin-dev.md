@@ -43,7 +43,6 @@ flutter create --org com.example --template=plugin hello
 static const EventChannel _eventchannel =
       const EventChannel('chat_socket_event');
 StreamSubscription _dataReceiverSubscription;
-
 // hàm quản lý đọc data channel 
 // bắt đầu nghe từ stream
  _startStream() {
@@ -52,7 +51,6 @@ StreamSubscription _dataReceiverSubscription;
           _eventchannel.receiveBroadcastStream().listen(_onReceiveData);
     }
   }
-
   // kết thúc nghe stream
   _endStream() {
     if (_dataReceiverSubscription != null) {
@@ -60,7 +58,6 @@ StreamSubscription _dataReceiverSubscription;
       _dataReceiverSubscription = null;
     }
   }
-
   // nhận data từ stream
   _onReceiveData(dynamic msg) {
     developer.log("Stream: $msg", name: name);
