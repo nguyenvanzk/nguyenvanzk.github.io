@@ -38,7 +38,7 @@ flutter create --org com.example --template=plugin hello
     [eventChannel setStreamHandler:eventChannelHandler];
 ```
 
-- đăng kí eventchannel trong Flutter
+- đăng kí eventchannel trong Flutter:
 ```dart
 static const EventChannel _eventchannel =
       const EventChannel('chat_socket_event');
