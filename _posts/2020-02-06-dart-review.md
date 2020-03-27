@@ -417,3 +417,16 @@ Stream<Type> method(params) async* {}
 - // single line comment 
 - /* */ multiline comment
 - /// hoặc /** là document comment 
+
+# byte stream
+- convert từ uint8List sang int 
+```dart
+var buffer = new Uint8List(8).buffer;
+var bytes = new ByteData.view(buffer);
+bytes.getUint16(offset);
+```
+- từ uint8list sang string 
+```dart
+String s = new String.fromCharCodes(inputAsUint8List);
+var outputAsUint8List = new Uint8List.fromList(s.codeUnits);
+```
