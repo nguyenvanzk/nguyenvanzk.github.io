@@ -25,5 +25,6 @@ flutter create --org com.example --template=plugin hello
   + sau đó tuỳ Platform, ta dùng ide để mở thư mục `hello/example/ios` hoặc `hello/example/android` lên
   + ta sẽ edit source code trong ide, code cho Android: `hello/java/com.example.hello/HelloPlugin` và iOS: `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
   + trong iOS, endpoint sẽ là `HelloPlugin.m` với method `handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result`
+
 # EventChannel
 - Dùng để truyền data từ Platform (iOS/Android) tới flutter
