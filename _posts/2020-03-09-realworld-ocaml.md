@@ -57,15 +57,26 @@ import các method, type của module
 - dùng `,` để phân cách các item của tuple. Ta có thể không cần () để khởi tạo tuple 
 
 # list
+## constructor 
+- khởi tạo, dùng `::` để nối các phần tử tạo list, thứ tự là left -> right. eg `"French"::Vietnam":: languages`
+
+## khái niệm 
 - cho phép lưu trữ 1 danh sách các item có cùng list
 - biểu diễn `[val1; val2; val3]`
 - dùng `;` để phân cách các item của list
 - dùng [] để biểu diễn emtpy list. Dùng :: để nối item vào list, toán tử này ưu tiên bên phải.
 - dùng `list1 @ list2` để nối 2 list lại, chú ý là toán tử @ sẽ take time.
+
 ## module list 
+### length 
 - List.length: lấy chiều dài của list 
 - `List.map list ~f:method` duyệt qua list, áp dụng hàm lên list để biến đổi, sau đó tạo ra list mới với các biến đổi
-- khởi tạo, dùng `::` để nối các phần tử tạo list, thứ tự là left -> right. eg `"French"::Vietnam":: languages`
+### map 
+### map2_exn
+### fold 
+
+
+
 ## list matching
 - ta có thể dùng pattern matching để phân lập list thành dạng `phần_tử_đầu_tiên :: phần_list_còn_lại`, nhưng cách này sẽ bỏ qua empty list `[]`
 - ta dùng `match` để pattern matching, cú pháp
@@ -264,6 +275,9 @@ nếu ta truyền vào 1 hàm `devide ~first ~second` thì sẽ pass `apply_to_t
 
 ## optional argument 
 ### basic
+```ocaml
+let concat ?sep x y = ...
+```
 - có thể truyền param hoặc bỏ qua khi gọi hàm
 - để biểu diễn argument là optional ta đặt dấu `?` trước tên argument: `let concat ?sep x y = ...` 
 - ta nên dùng pattern matching để xử lý với optional argument, có thể gán giá trị mặc định cho argument `let concat ?(sep="") x y = ...`
@@ -282,3 +296,4 @@ nếu ta truyền vào 1 hàm `devide ~first ~second` thì sẽ pass `apply_to_t
 - nếu truyền tấp cả param vào cùng lúc, thì optional argument sẽ không bị loại (earased - xoá)
 
 # List 
+- constructor
