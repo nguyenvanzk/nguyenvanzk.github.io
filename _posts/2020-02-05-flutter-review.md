@@ -128,3 +128,6 @@ ví dụ `/home` vì có `/` nên sẽ tạo ra route `/` và `/home`, nếu kh�
 ## thư viện intl 
 - `new DateFormat.yMd()`
 - `new DateFormat('yMd')`
+
+# utility
+- lấy tên class: `runtimeType`
