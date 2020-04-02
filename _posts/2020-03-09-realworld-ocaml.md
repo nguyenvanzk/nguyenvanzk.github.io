@@ -61,7 +61,8 @@ import các method, type của module
 - khởi tạo, dùng `::` để nối các phần tử tạo list, thứ tự là left -> right. eg `"French"::Vietnam":: languages`
 
 ## khái niệm 
-- cho phép lưu trữ 1 danh sách các item có cùng list
+- cho phép lưu trữ 1 danh sách các item có cùng kiểu
+- đây là 1 dạng linked list
 - biểu diễn `[val1; val2; val3]`
 - dùng `;` để phân cách các item của list
 - dùng [] để biểu diễn emtpy list. Dùng :: để nối item vào list, toán tử này ưu tiên bên phải.
@@ -69,13 +70,34 @@ import các method, type của module
 
 ## module list 
 ### length 
+- `List.length s`
 - List.length: lấy chiều dài của list 
-- `List.map list ~f:method` duyệt qua list, áp dụng hàm lên list để biến đổi, sau đó tạo ra list mới với các biến đổi
-### map 
+### map
+- `List.map list ~f:method` duyệt qua list, áp dụng hàm `f` lên từng phần tử của list, sau đó tạo ra list mới với các biến đổi
 ### map2_exn
+- `List.map2_exn ~f:method list1 list2`
+- map2_exn sẽ kết hợp 2 list thành 1 dùng hàm f, sẽ quăng exception nếu list1, list2 khác length.
 ### fold 
-
-
+- `List.fold acc ~f:method list`
+- ta dùng fold với một biến khởi đầu acc, một hàm f nhận tham số cùng kiểu với acc + kiểu của mảng, và mảng. Khi thực thi xong hàm fold sẽ trả về 1 biến cùng kiểu với acc sau khi áp dụng hàm f
+### reduce 
+- là phiên bản đơn giản của fold bỏ qua acc (acc sẽ được ngầm định)
+- acc sẽ cùng data type với list
+- trả về kiểu Option
+### filter
+- `List.filter ~f:method list` 
+- dùng để filter data 
+### filter_map
+- `List.filter_map ~f:method list`
+- dùng filter data, những phần tử nào khi áp dụng hàm f mà trả về None thì sẽ bị remove khỏi list
+### dedup_and_sort
+- loại bỏ phần tử bị trùng lặp 
+### partition_tf 
+- `partition_tf list ~f:boolean_return_method` phân 1 list thành 2 list dựa vào hàm f trả về boolean
+- tf nghĩa là true -> first list, false -> second list
+### kết hợp list 
+- `@` và `List.append` kết hợp 2 list thành 1 
+- `List.concat` kết hợp các phần tử dạng list trong list 
 
 ## list matching
 - ta có thể dùng pattern matching để phân lập list thành dạng `phần_tử_đầu_tiên :: phần_list_còn_lại`, nhưng cách này sẽ bỏ qua empty list `[]`
@@ -86,6 +108,29 @@ let match list_of_items with
 | first_item:: rest_of_list -> expr 
 ```
 - thông thường, ta đặt tên first_item là `hd`(head), phần còn lại của list là `tl`(tail)
+- nguyên lý:
+  + match đóng vai trò như 1 tool phân loại đầu vào thành các case 
+  + đặt tên các cấu trúc con trong các cấu trúc dữ liệu của case
+  + không được dùng biểu thức điều kiện trong case của pattern matching. case chỉ dc dùng để mô phỏng cấu trúc dữ liệu đầu vào, có thể thêm hằng số vào case.
+- hiệu năng: match pattern được tối ưu để có thể nhảy trực tiếp đến case thay vì duyệt từng case, cho nên nó nhanh hơn câu lệnh `if else` đc sử dụng tương đương.
+- ta có thể benchmark bằng `core_bench`
+- khả năng véc cạn các case của match khá hiệu quả trong việc phát hiện lỗi
+
+### tail recursion
+- recursion bình thường, ta hay viết biểu thức dạng | _ :: tl -> 1 + method tl. nhưng khi gặp dữ liệu lớn sẽ gây tràn bộ nhớ
+- tail recursion được tối ưu để tránh hạn chế này, sẽ chuyển qua update một giá trị độc lập với tail: | _ :: tl -> method tl (n + 1)
+
+### terser và faster patterns 
+- ta dùng `as` để đặt tên cho 1 case trong matching patter, và tham chiếu lại sau đó
+- có thể dùng or pattern để kết hợp nhiều case lại thành 1 case `| [] | [_] as l -> l`
+- dùng `when` để thêm điều kiện vào case `| hd:: (hd' :: as tl) when hd = hd' -> tl`
+
+### so sánh đa hình (polymorphic compare)
+- ta dùng `Base.Poly` để đa hình 
+- có các hạn chế:
+  + sẽ failed khi gặp kiểu function
+  + các giá trị ngoài vùng nhớ heap của OCaml, eg: value từ C bindings.
+- hạn chế dùng
 
 ## đệ quy list
 - định nghĩa: ta phân lập thành các case cơ bản (base case) có thể giải quyết, và phần còn lại (inductive case) sẽ được gọi đệ quy về case cơ bản
