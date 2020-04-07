@@ -347,7 +347,7 @@ let concat ?sep x y = ...
 # Editor
 - ta dùng ReasonML vscode plugin
 - sau khi cài đặt ta cấu hình ocp-indent, merlin, opam cho plugin
-- tại thư mục root, ta định nghĩa file`merlin` có nội dung 
+- tại thư mục root, ta định nghĩa file `.merlin` có nội dung 
   + định nghĩa đường dẫn source với chỉ thị S
   + định nghĩa thư viện sử dụng với PKG
   + định nghĩa đường dẫn build với B
