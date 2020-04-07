@@ -340,5 +340,26 @@ let concat ?sep x y = ...
 - optional argument sẽ bị loại khi truyền vào hàm tham số có vị trí đứng sau optional argument
 - nếu truyền tấp cả param vào cùng lúc, thì optional argument sẽ không bị loại (earased - xoá)
 
-# List 
-- constructor
+# List Assoc
+- Là một kiểu hashmap, nằm trong Base
+- hàm List.Assoc.add sẽ không modify list assoc, mà tạo 1 list mới từ list cũ + item thêm vào
+
+# Editor
+- ta dùng ReasonML vscode plugin
+- sau khi cài đặt ta cấu hình ocp-indent, merlin, opam cho plugin
+- tại thư mục root, ta định nghĩa file`merlin` có nội dung 
+  + định nghĩa đường dẫn source với chỉ thị S
+  + định nghĩa thư viện sử dụng với PKG
+  + định nghĩa đường dẫn build với B
+  ```merlin 
+  PKG Base
+  S bin/freq.ml
+  B _build/freq.exe
+  ```
+- tại cái thư mục chứa source code, ta định nghĩa file `dune`
+```lisp
+(executable
+  (name      freq)
+  (libraries base stdio))
+```
+- sau đó ta thực thi `dune build` thì các thư viện tham chiếu sẽ không còn báo lỗi trong vscode
